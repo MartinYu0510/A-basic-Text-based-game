@@ -255,7 +255,7 @@ void plot4_start(Role *player_addr, Role *boss_addr){
     cout << "Boss : " << boss_addr->name << " HP: " << boss_addr->HP << " Skill: " << boss_addr->skill << endl;     sleep_for(::seconds(sleep_t));
 }
 
-void plot4_ending(Role *player_addr, Role *boss_addr, bool player_loss){
+void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){
     if(player_loss){
         cout << boss_addr->name << " : Oh! Poor " << player_addr->name << "!" << endl;  sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : If you act smarter, and be a good slave, thing will not run out of control." << endl;    sleep_for(::seconds(sleep_t));
