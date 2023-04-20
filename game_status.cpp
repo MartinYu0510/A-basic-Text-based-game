@@ -104,130 +104,131 @@ bool check_winloss(int player_hp, int boss_hp, bool &player_loss){      //Checki
     return true;
 }
 
-void boss_skill1(Role *player_addr, Role *boss_addr){
-    for(int i=0; i<2;i++){
-        cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
-        player_addr->HP-=2;
-        if(player_addr->HP<0){
-            player_addr->HP=0;
+bool player_skill(Role *player_addr, Role *boss_addr, string skill){
+    if(skill=="UnlimitedVoid") {
+        if(player_addr->SP<8){
+            cout << "Your SP is not enough, please choose another choice." << endl;
+            return true;
         }
-        cout << player_addr->name << "'s hp is decreasing due to horrible alarm..." << '\n' << "HP: " << player_addr->HP << endl;   sleep_for(::seconds(sleep_t));
-        cout << player_addr->name << " : Oh come on... why will this happen to me..." << endl;  sleep_for(::seconds(sleep_t));
-    }
-    cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
-}
-void boss_skill2(Role *player_addr, Role *boss_addr){
-    cout << boss_addr->name << " : Feel Pain. Contemplate Pain." << endl;   sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : Accept Pain. Know Pain!" << endl;    sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : One who does know pain cannot possibly understand true pain"<< endl;     sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : And now... The world shall know pain... Shinra Tensei" << endl;  sleep_for(::seconds(sleep_t));
-    player_addr->HP-=5;
-    if(player_addr->HP<0){
-        player_addr->HP=0;
-    }
-    cout << player_addr->name << "'s hp is decreased by 5." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;    sleep_for(::seconds(sleep_t));
-}
-
-void boss_skill3(Role *player_addr, Role *boss_addr){
-    cout << boss_addr->name << " : Hey " << player_addr->name << endl;  sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : You're really a dumb, a loser, a kid, a freak, a deviance." << endl;     sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : Why don't you just die??? Why don't you just quite??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
-    cout << "[" << boss_addr->name << " just keeps talking and repeating]" << endl; sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : You're very annoying...." << endl; sleep_for(::seconds(sleep_t));
-    player_addr->HP-=3; player_addr->SP-=3;
-    if(player_addr->HP<0){
-        player_addr->HP=0;
-    }
-    if(player_addr->SP<0){
-        player_addr->SP=0;
-    }
-    cout << player_addr->name << "'s HP and SP is decreased by 3 due to " << boss_addr->name << " annoying words..." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;   sleep_for(::seconds(sleep_t));
-}
-
-void boss_skill4(Role *player_addr, Role *boss_addr){
-    cout << boss_addr->name << " : You're under my control..." << endl; sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : You have to hurt yourself..." << endl;   sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : W..ait?! I cannot control my body.... NO!!!" << endl;  sleep_for(::seconds(sleep_t));
-    for(int i=0; i<3;i++){
-        cout << player_addr->name << " : Keep hurting himself..." << endl;  sleep_for(::seconds(sleep_t));
-        player_addr->HP-=2; player_addr->SP-=2;
-        if(player_addr->HP<0){
-            player_addr->HP=0;
-            break;
-        }
-        if(player_addr->SP<0){
-            player_addr->SP=0;
-        }
-    cout << player_addr->name << "'s HP and SP decreased by 2...." << '\n' << "HP: "<< player_addr->HP << " SP: "<< player_addr->SP << endl; sleep_for(::seconds(sleep_t));
-    }
-}
-
-void skill1(Role *player_addr, Role *boss_addr){
-    cout << player_addr->name << " : Domain Expansion: Unlimited Void." << endl;    sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : Wh...What?! What is this place..?" << endl;  sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : It's ironic, right? When granted everthing you can't do anything.." << endl;   sleep_for(::seconds(sleep_t));
-    cout << "[" << boss_addr->name << " cannot move for 1 turn]" << endl;   sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " use attack." << endl;    sleep_for(::seconds(sleep_t));
-    if(random_event("critical")==1){
-        cout << player_addr->name << " get a critical hit !" << endl;
-        boss_addr->HP-=((player_addr->Attack+5) * 1.5);
-    }
-    else{
-        boss_addr->HP-=(player_addr->Attack+5);
-    }
-
-    if(boss_addr->HP<0){
-        boss_addr->HP=0;
-        cout << player_addr->name << " : It's fine after all. You're weakkkk..." << endl;
-    }
-    cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
-}
-
-void skill2(Role *player_addr, Role *boss_addr){
-    cout << "[" << player_addr->name << " transforms into a giant titian with numerous skeletons]" << endl;     sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : I, " << player_addr->name << ", as the founding titan will destroy you until all the...." << endl;     sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : ... ... ... That is .... Yeah... It's him" << endl;  sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : ATTACK ON TITIAN!!!" << endl;     sleep_for(::seconds(sleep_t));
-    boss_addr->HP-=10;
-    if(boss_addr->HP<0){
-        boss_addr->HP=0;
-        cout << player_addr->name << " : The people who witnessed these things..." << endl;     sleep_for(::seconds(sleep_t));
-        cout << player_addr->name << " : were the ones that had obtained the greatest freedom in thr world." << endl;   sleep_for(::seconds(sleep_t));
-        cout << player_addr->name << " : This... is FREEDOM!!" << endl;     sleep_for(::seconds(sleep_t));
-    }
-    cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
-}
-
-void skill3(Role *player_addr, Role *boss_addr) {
-    cout << "[a purple ghost appears behind " << player_addr->name << "]" << endl;
-    sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : It's is a stand named Star Platinum with a short range and a strong power."
-         << endl;
-    sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : Are you gonna do the ORA ORA thing..?" << endl;
-    sleep_for(::seconds(sleep_t));
-    cout << player_addr->name << " : YES! YES! YES! YES!" << endl;
-    sleep_for(::seconds(sleep_t));
-    for (int i = 0; i < 3; i++) {
-        cout << "[ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA" << endl;
-        cout << boss_addr->name << " : AHHHHHHH!" << endl;
-        sleep_for(::seconds(sleep_t));
-        boss_addr->HP -= 3;
-        if (boss_addr->HP < 0) {
-            boss_addr->HP = 0;
-            cout << player_addr->name << " : There's only one reason why you lost, " << boss_addr->name << endl;
+        else {
+            player_addr->SP-=8;
+            cout << player_addr->name << " : Domain Expansion: Unlimited Void." << endl;
             sleep_for(::seconds(sleep_t));
-            cout << player_addr->name << " : There's just one simple answer." << endl;
+            cout << boss_addr->name << " : Wh...What?! What is this place..?" << endl;
             sleep_for(::seconds(sleep_t));
-            cout << player_addr->name << " : You really pissed me off." << endl;
+            cout << player_addr->name << " : It's ironic, right? When granted everthing you can't do anything.."
+                 << endl;
             sleep_for(::seconds(sleep_t));
-            break;
-        }
-        cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
-        cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
-    }
-}
+            cout << "[" << boss_addr->name << " cannot move for 1 turn]" << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << player_addr->name << " use attack." << endl;
+            sleep_for(::seconds(sleep_t));
+            if (random_event("critical") == 1) {
+                cout << player_addr->name << " get a critical hit !" << endl;
+                boss_addr->HP -= ((player_addr->Attack + 5) * 1.5);
+            } else {
+                boss_addr->HP -= (player_addr->Attack + 5);
+            }
 
-void skill4(Role *player_addr, Role *boss_addr){
-    cout << `
+            if (boss_addr->HP < 0) {
+                boss_addr->HP = 0;
+                cout << player_addr->name << " : It's fine after all. You're weakkkk..." << endl;
+            }
+            cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
+        }
+    }
+    else if(skill=="Rumbling") {
+        if(player_addr->SP<10){
+            cout << "Your SP is not enough, please choose another choice." << endl;
+            return true;
+        }
+        else {
+            player_addr->SP-=10;
+            cout << "[" << player_addr->name << " transforms into a giant titian with numerous skeletons]" << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << player_addr->name << " : I, " << player_addr->name
+                 << ", as the founding titan will destroy you until all the...." << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << boss_addr->name << " : ... ... ... That is .... Yeah... It's him" << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << boss_addr->name << " : ATTACK ON TITIAN!!!" << endl;
+            sleep_for(::seconds(sleep_t));
+            boss_addr->HP -= 10;
+            if (boss_addr->HP < 0) {
+                boss_addr->HP = 0;
+                cout << player_addr->name << " : The people who witnessed these things..." << endl;
+                sleep_for(::seconds(sleep_t));
+                cout << player_addr->name << " : were the ones that had obtained the greatest freedom in thr world."
+                     << endl;
+                sleep_for(::seconds(sleep_t));
+                cout << player_addr->name << " : This... is FREEDOM!!" << endl;
+                sleep_for(::seconds(sleep_t));
+            }
+            cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
+        }
+    }
+    else if(skill=="StarPlatinum") {
+        if(player_addr->SP<8){
+            cout << "Your SP is not enough, please choose another choice." << endl;
+            return true;
+        }
+        else {
+            player_addr->SP-=8;
+            cout << "[a purple ghost appears behind " << player_addr->name << "]" << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << player_addr->name << " : It's is a stand named Star Platinum with a short range and a strong power."
+                 << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << boss_addr->name << " : Are you gonna do the ORA ORA thing..?" << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << player_addr->name << " : YES! YES! YES! YES!" << endl;
+            sleep_for(::seconds(sleep_t));
+            for (int i = 0; i < 3; i++) {
+                cout << "[ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA" << endl;
+                cout << boss_addr->name << " : AHHHHHHH!" << endl;
+                sleep_for(::seconds(sleep_t));
+                boss_addr->HP -= 3;
+                if (boss_addr->HP < 0) {
+                    boss_addr->HP = 0;
+                    cout << player_addr->name << " : There's only one reason why you lost, " << boss_addr->name << endl;
+                    sleep_for(::seconds(sleep_t));
+                    cout << player_addr->name << " : There's just one simple answer." << endl;
+                    sleep_for(::seconds(sleep_t));
+                    cout << player_addr->name << " : You really pissed me off." << endl;
+                    sleep_for(::seconds(sleep_t));
+                    break;
+                }
+                cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
+            }
+        }
+    }
+    else {
+        if(player_addr->SP<8){
+            cout << "Your SP is not enough, please choose another choice." << endl;
+            return true;
+        }
+        else {
+            player_addr->SP-=8;
+            cout << "[A red flower occurred and " << player_addr->name << " turn into a guy with white clothing]"
+                 << endl;
+            sleep_for(::seconds(sleep_t));
+            cout << player_addr->name << " : Time to have BBQ" << endl;
+            sleep_for(::seconds(sleep_t));
+            for (int i = 0; i < 2; i++) {
+                cout << "[" << boss_addr->name << " is burnt due to " << player_addr->name << " fire attacks]" << endl;
+                sleep_for(::seconds(sleep_t));
+                cout << boss_addr->name << " : Too HOt!!!!!" << endl;
+                sleep_for(::seconds(sleep_t));
+                boss_addr->HP -= (player_addr->Attack * 2);
+                boss_addr->HP -= 2;
+                if (boss_addr->HP == 0) {
+                    boss_addr->HP = 0;
+                    cout << player_addr->name << " : Mario Time !!!" << endl;
+                    sleep_for(::seconds(sleep_t));
+                }
+                cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
+            }
+        }
+    }
+    return false;
 }
