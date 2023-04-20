@@ -82,16 +82,7 @@ void set1(Role *player_addr, int &set, bool player_loss){
             cout << "[" << boss_addr->name << " get into Overloading mode...]" << endl;
             cout << "[" << boss_addr->name << "'s attack rose...]" << endl;     sleep_for(::seconds(sleep_t));
             cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;    sleep_for(::seconds(sleep_t));
-            for(int i=0; i<2;i++){
-                cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
-                player_addr->HP-=2;
-                if(player_addr->HP<0){
-                    player_addr->HP=0;
-                }
-                cout << player_addr->name << "'s hp is decreasing due to horrible alarm..." << '\n' << "HP: " << player_addr->HP << endl;   sleep_for(::seconds(sleep_t));
-                cout << player_addr->name << " : Oh come on... why will this happen to me..." << endl;  sleep_for(::seconds(sleep_t));
-            }
-            cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
+            boss_skill1(player_addr, boss_addr);
         }
         cout << "========================Boss Turn========================" << endl;    sleep_for(::seconds(sleep_t));
         cout << "HP: " << boss_addr->HP << endl;
@@ -291,19 +282,10 @@ void set2(Role *player_addr, int &set, bool player_loss){
         if(boss_addr->HP<=hp/2 && boss_addr->half_hp==false){
             boss_addr->half_hp=true;
             cout << boss_addr->name << " : You are making me.... ANGRYYYYY!!!!!!!!" << endl;    sleep_for(::seconds(sleep_t));
-            cout << "[" << boss_addr->name << " get into Overloading mode...]" << endl;
+            cout << "[" << boss_addr->name << " get into TryHard mode...]" << endl;
             cout << "[" << boss_addr->name << "'s attack rose...]" << endl;     sleep_for(::seconds(sleep_t));
             cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;    sleep_for(::seconds(sleep_t));
-            for(int i=0; i<2;i++){
-                cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
-                player_addr->HP-=2;
-                if(player_addr->HP<0){
-                    player_addr->HP=0;
-                }
-                cout << player_addr->name << "'s hp is decreasing due to horrible alarm..." << '\n' << "HP: " << player_addr->HP << endl;   sleep_for(::seconds(sleep_t));
-                cout << player_addr->name << " : Oh come on... why will this happen to me..." << endl;  sleep_for(::seconds(sleep_t));
-            }
-            cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
+            boss_skill2(player_addr, boss_addr);
         }
         cout << "========================Boss Turn========================" << endl;    sleep_for(::seconds(sleep_t));
         cout << "HP: " << boss_addr->HP << endl;
@@ -323,13 +305,13 @@ void set2(Role *player_addr, int &set, bool player_loss){
                 }
                 break;
             case '2':
-                cout << boss_addr->name << " use recharging." << endl;    sleep_for(::seconds(sleep_t));
-                boss_addr->HP+=1;
-                cout << boss_addr->name << "'s HP is regenerate by 1." << '\n' << boss_addr->name << " : HaHa!! My health has returned! " << endl;  sleep_for(::seconds(sleep_t));
+                cout << boss_addr->name << " use working." << endl;    sleep_for(::seconds(sleep_t));
+                boss_addr->HP+=2;
+                cout << boss_addr->name << "'s HP is regenerate by 2." << '\n' << boss_addr->name << " : HaHa!! My health has returned! " << endl;  sleep_for(::seconds(sleep_t));
                 break;
             case '3':
                 cout << boss_addr->name << " use ridicule." << endl;    sleep_for(::seconds(sleep_t));
-                trashword.emplace_back("You must be a Android user!"); trashword.emplace_back("I should feed you some apples, kid!"); trashword.emplace_back("Do you want some Iphone alarm sound??");
+                trashword.emplace_back("You must be a lzay worker!"); trashword.emplace_back("I am harder anyone else!!"); trashword.emplace_back("None can stop me from working??");
                 cout << boss_addr->name << " : " << trashword[random_event("trashword")-1] << endl; sleep_for(::seconds(sleep_t));
                 trashword.clear();
                 break;
@@ -337,7 +319,7 @@ void set2(Role *player_addr, int &set, bool player_loss){
                 if(boss_addr->boss_skill_charge>=3) {
                     cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;
                     sleep_for(::seconds(sleep_t));
-                    boss_skill1(player_addr, boss_addr);
+                    boss_skill2(player_addr, boss_addr);
                     boss_addr->boss_skill_charge-=3;
                 }
                 break;
