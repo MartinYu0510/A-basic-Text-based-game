@@ -225,7 +225,7 @@ void set2(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 51 || move < 49) {
+                if (move > 52 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
@@ -365,7 +365,7 @@ void set3(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 51 || move < 49) {
+                if (move > 52 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
@@ -506,7 +506,7 @@ void set4(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 51 || move < 49) {
+                if (move > 52 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
