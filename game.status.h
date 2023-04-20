@@ -1,7 +1,3 @@
-//
-// Created by MartinYu on 30/3/2023.
-//
-
 #ifndef COURSE_PROJECT_PLAYER_STATUS_H
 #define COURSE_PROJECT_PLAYER_STATUS_H
 
