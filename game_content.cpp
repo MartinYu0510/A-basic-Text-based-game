@@ -140,6 +140,7 @@ void set1(Role *player_addr, int &set, bool player_loss){
         ending(false);
     }
     string option;
+    set++;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
         cin >> option;
@@ -152,7 +153,6 @@ void set1(Role *player_addr, int &set, bool player_loss){
             break;
         }
     }
-    set++;
 }
 
 void skill_choice(Role *player_addr, int &set){
@@ -347,6 +347,7 @@ void set2(Role *player_addr, int &set, bool player_loss){
         boss_addr->boss_skill_charge++;
         player_addr->defense=false;
     }
+    set++;
     string option;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
@@ -360,7 +361,6 @@ void set2(Role *player_addr, int &set, bool player_loss){
             break;
         }
     }
-    set++;
 }
 
 void set3(Role *player_addr, int &set, bool player_loss){
@@ -371,6 +371,7 @@ void set3(Role *player_addr, int &set, bool player_loss){
     plot3_start(player_addr, boss_addr);
     //To be implemented
     string option;
+    set++;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
         cin >> option;
@@ -383,7 +384,6 @@ void set3(Role *player_addr, int &set, bool player_loss){
             break;
         }
     }
-    set++;
 }
 
 void set4(Role *player_addr, int &set, bool player_loss){
@@ -415,13 +415,8 @@ void load_game(){       //Loading the original game
     Role *player_addr=&player;
     player=load(player_addr, set);
     switch(set){
-        case 1:
-            skill_choice(player_addr, set);
-            set2(player_addr, set, player_loss);
-            set3(player_addr, set, player_loss);
-            set4(player_addr, set, player_loss);
-            break;
         case 2:
+            skill_choice(player_addr, set);
             set2(player_addr, set, player_loss);
             set3(player_addr, set, player_loss);
             set4(player_addr, set, player_loss);
