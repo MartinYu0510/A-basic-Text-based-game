@@ -1,6 +1,4 @@
-//
-// Created by MartinYu on 4/4/2023.
-//
+
 #include <iostream>
 #include <string>
 #include <chrono>
