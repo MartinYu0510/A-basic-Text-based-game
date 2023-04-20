@@ -56,16 +56,16 @@ Role boss_status_init(int set){     //Initializing variable for boss's status
     Role *boss_addr=&boss;
     switch(set) {                   //Assigning value to the variable due to different game sets
         case 1:
-            (*boss_addr) = {"IPhone", "Iphone Alarm Ring", 15, 2};
+            boss.name="IPhone";boss.skill="Iphone Alarm Ring"; boss.HP=15 ; boss.Attack=2;
             break;
         case 2:
-            (*boss_addr) = {"MrLai", "Shinra Tensei", 25, 4};
+            boss.name="MrLai";boss.skill="Shinra Tensei"; boss.HP=25 ; boss.Attack=4;
             break;
         case 3:
-            (*boss_addr) = {"ShoeShiner", "Talk No Jutsu", 30, 6};
+            boss.name="ShoeShiner";boss.skill="Talk No Jutsu"; boss.HP=30 ; boss.Attack=6;
             break;
         case 4:
-            (*boss_addr) = {"Your Boss", "Slave", 40, 8};
+            boss.name="Your Boss";boss.skill="Slave"; boss.HP=40 ; boss.Attack=8;
             break;
     }
     return boss;
@@ -90,6 +90,7 @@ int random_event(string event){ //Generating random event i.e. critical hit and 
         result=1+(rand()%3);
         return result;
     }
+    return -1;
 }
 
 bool check_winloss(int player_hp, int boss_hp, bool &player_loss){      //Checking win or lose

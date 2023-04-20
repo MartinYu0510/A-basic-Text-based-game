@@ -7,7 +7,7 @@
 using namespace std;
 using namespace ::this_thread;
 
-int maingame(char mode){
+void maingame(char mode){
     switch(mode){
         case '1':
             new_game();
