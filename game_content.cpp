@@ -226,7 +226,127 @@ void set2(Role *player_addr, int &set, bool player_loss){
     Role *boss_addr=&boss;
     int hp=boss_addr->HP; boss_addr->half_hp=false;
     plot2_start(player_addr, boss_addr);
-    //To be implemented
+    while(check_winloss(player_addr->HP, boss_addr->HP, player_loss)){
+        char move;
+        cout << "========================Your Turn========================" << endl;    sleep_for(::seconds(sleep_t));
+        cout << "HP: " << player_addr->HP << "  "  << "SP: "<< player_addr->SP << " " << "Attack: " << player_addr->Attack << endl;
+        cout << "1. Attack" << '\n' << "2. Defend" << '\n' << "3. "<< player_addr->skill << '\n' << "4. Escape" << endl;
+        bool contin=true;
+        while(contin){
+            while (true) {
+                cout << "Your move(1/2/3/4): ";
+                cin >> move;
+                if (move > 51 || move < 49) {
+                    cout << "Please input a valid value!!" << endl;
+                } else {
+                    break;
+                }
+            }
+            switch (move) {
+                case '1':
+                    contin=false;
+                    cout << player_addr->name << " use attack." << endl;
+                    sleep_for(::seconds(sleep_t));
+                    if (random_event("critical") == 1) {
+                        cout << player_addr->name << " get a critical hit !" << endl;
+                        boss_addr->HP -= (player_addr->Attack * 1.5);
+                    } else {
+                        boss_addr->HP -= player_addr->Attack;
+                    }
+
+                    if (boss_addr->HP < 0) {
+                        boss_addr->HP = 0;
+                    }
+                    cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;
+                    break;
+                case '2':
+                    contin=false;
+                    int chance;
+                    chance = random_event("def");
+                    if (chance == 1) {
+                        player_addr->defense = true;
+                    } else {
+                        player_addr->defense = false;
+                    }
+                    cout << player_addr->name << " use defense." << endl;
+                    sleep_for(::seconds(sleep_t));
+                    break;
+                case '3':
+                    cout << player_addr->name << " use " << player_addr->skill << endl;
+                    contin=player_skill(player_addr, boss_addr, player_addr->skill);
+                    sleep_for(::seconds(sleep_t));
+                    break;
+                case '4':
+                    contin= false;
+                    cout << player_addr->name << " use escape." << endl;
+                    sleep_for(::seconds(sleep_t));
+                    cout << boss_addr->name << " You are a loser !!!" << endl;
+                    sleep_for(::seconds(sleep_t));
+                    ending(false);
+                    break;
+                }
+            }
+        if(boss_addr->HP<=0){
+            player_loss=false;
+            break;
+        }
+        if(boss_addr->HP<=hp/2 && boss_addr->half_hp==false){
+            boss_addr->half_hp=true;
+            cout << boss_addr->name << " : You are making me.... ANGRYYYYY!!!!!!!!" << endl;    sleep_for(::seconds(sleep_t));
+            cout << "[" << boss_addr->name << " get into Overloading mode...]" << endl;
+            cout << "[" << boss_addr->name << "'s attack rose...]" << endl;     sleep_for(::seconds(sleep_t));
+            cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;    sleep_for(::seconds(sleep_t));
+            for(int i=0; i<2;i++){
+                cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
+                player_addr->HP-=2;
+                if(player_addr->HP<0){
+                    player_addr->HP=0;
+                }
+                cout << player_addr->name << "'s hp is decreasing due to horrible alarm..." << '\n' << "HP: " << player_addr->HP << endl;   sleep_for(::seconds(sleep_t));
+                cout << player_addr->name << " : Oh come on... why will this happen to me..." << endl;  sleep_for(::seconds(sleep_t));
+            }
+            cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
+        }
+        cout << "========================Boss Turn========================" << endl;    sleep_for(::seconds(sleep_t));
+        cout << "HP: " << boss_addr->HP << endl;
+        move=random_event("move")+48;
+        switch(move){
+            case '1':
+                cout << boss_addr->name << " use attack." << endl;  sleep_for(::seconds(sleep_t));
+                if(player_addr->defense){
+                    cout << player_addr->name << " successfully defend " << boss_addr->name << "'s attack " << endl;    sleep_for(::seconds(sleep_t));
+                    boss_addr->HP-=(player_addr->Attack/2);
+                    cout << boss_addr->name << " is hurt due to the rebound damage." << endl;
+                    cout << boss_addr->name << "'s HP decrease to " << boss_addr->HP << endl;   sleep_for(::seconds(sleep_t));
+                }
+                else{
+                    player_addr->HP-=boss_addr->Attack;
+                    cout << player_addr->name << "'s HP decreases to " << player_addr->HP << endl;  sleep_for(::seconds(sleep_t));
+                }
+                break;
+            case '2':
+                cout << boss_addr->name << " use recharging." << endl;    sleep_for(::seconds(sleep_t));
+                boss_addr->HP+=1;
+                cout << boss_addr->name << "'s HP is regenerate by 1." << '\n' << boss_addr->name << " : HaHa!! My health has returned! " << endl;  sleep_for(::seconds(sleep_t));
+                break;
+            case '3':
+                cout << boss_addr->name << " use ridicule." << endl;    sleep_for(::seconds(sleep_t));
+                trashword.emplace_back("You must be a Android user!"); trashword.emplace_back("I should feed you some apples, kid!"); trashword.emplace_back("Do you want some Iphone alarm sound??");
+                cout << boss_addr->name << " : " << trashword[random_event("trashword")-1] << endl; sleep_for(::seconds(sleep_t));
+                trashword.clear();
+                break;
+            case '4':
+                if(boss_addr->boss_skill_charge>=3) {
+                    cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;
+                    sleep_for(::seconds(sleep_t));
+                    boss_skill1(player_addr, boss_addr);
+                    boss_addr->boss_skill_charge-=3;
+                }
+                break;
+        }
+        boss_addr->boss_skill_charge++;
+        player_addr->defense=false;
+    }
     string option;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
