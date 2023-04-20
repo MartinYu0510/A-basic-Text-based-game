@@ -1,6 +1,4 @@
-//
-// Created by MartinYu on 29/3/2023.
-//
+
 
 #ifndef COURSE_PROJECT_START_MENU_H
 #define COURSE_PROJECT_START_MENU_H
