@@ -328,6 +328,10 @@ void set2(Role *player_addr, int &set, bool player_loss){
         player_addr->defense=false;
     }
     set++;
+    plot2_ending(player_addr, boss_addr, player_loss);
+    if(player_loss){
+        ending(false);
+    }
     string option;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
@@ -465,6 +469,10 @@ void set3(Role *player_addr, int &set, bool player_loss){
         player_addr->defense=false;
     }
     string option;
+    plot3_ending(player_addr, boss_addr, player_loss);
+    if(player_loss){
+        ending(false);
+    }
     set++;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
@@ -600,6 +608,10 @@ void set4(Role *player_addr, int &set, bool player_loss){
         }
         boss_addr->boss_skill_charge++;
         player_addr->defense=false;
+    }
+    plot4_ending(player_addr, boss_addr, player_loss);
+    if(player_loss){
+        ending(false);
     }
 }
 
