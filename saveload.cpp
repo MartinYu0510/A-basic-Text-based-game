@@ -6,7 +6,7 @@
 #include <sstream>
 #include <fstream>
 #include "saveload.h"
-#include "game.status.h"
+#include "game_status.h"
 #include "game_content.h"
 using namespace std;
 

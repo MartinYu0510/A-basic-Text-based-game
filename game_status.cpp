@@ -2,7 +2,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
-#include "game.status.h"
+#include "game_status.h"
 #include <algorithm>
 #include <cstdlib>
 #include <vector>

@@ -3,7 +3,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
-#include "game.status.h"
+#include "game_status.h"
 #include "saveload.h"
 #include <algorithm>
 #include "start_menu.h"

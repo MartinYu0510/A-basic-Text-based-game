@@ -4,7 +4,7 @@
 #include <chrono>
 #include <thread>
 #include <vector>
-#include "game.status.h"
+#include "game_status.h"
 using namespace std;
 using namespace ::this_thread;
 

@@ -7,7 +7,7 @@
 #include <thread>
 #include <algorithm>
 #include "game_plot.h"
-#include "game.status.h"
+#include "game_status.h"
 #include "game_content.h"
 #include "start_menu.h"
 #include "ascii.h"
