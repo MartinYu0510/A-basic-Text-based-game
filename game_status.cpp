@@ -233,3 +233,61 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
     }
     return false;
 }
+
+void boss_skill1(Role *player_addr, Role *boss_addr){
+    for(int i=0; i<2;i++){
+        cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
+        player_addr->HP-=2;
+        if(player_addr->HP<0){
+            player_addr->HP=0;
+        }
+        cout << player_addr->name << "'s hp is decreasing due to horrible alarm..." << '\n' << "HP: " << player_addr->HP << endl;   sleep_for(::seconds(sleep_t));
+        cout << player_addr->name << " : Oh come on... why will this happen to me..." << endl;  sleep_for(::seconds(sleep_t));
+    }
+    cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
+}
+void boss_skill2(Role *player_addr, Role *boss_addr){
+    cout << boss_addr->name << " : Feel Pain. Contemplate Pain." << endl;   sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : Accept Pain. Know Pain!" << endl;    sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : One who does know pain cannot possibly understand true pain"<< endl;     sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : And now... The world shall know pain... Shinra Tensei" << endl;  sleep_for(::seconds(sleep_t));
+    player_addr->HP-=5;
+    if(player_addr->HP<0){
+        player_addr->HP=0;
+    }
+    cout << player_addr->name << "'s hp is decreased by 5." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;    sleep_for(::seconds(sleep_t));
+}
+
+void boss_skill3(Role *player_addr, Role *boss_addr){
+    cout << boss_addr->name << " : Hey " << player_addr->name << endl;  sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : You're really a dumb, a loser, a kid, a freak, a deviance." << endl;     sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : Why don't you just die??? Why don't you just quite??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
+    cout << "[" << boss_addr->name << " just keeps talking and repeating]" << endl; sleep_for(::seconds(sleep_t));
+    cout << player_addr->name << " : You're very annoying...." << endl; sleep_for(::seconds(sleep_t));
+    player_addr->HP-=3; player_addr->SP-=3;
+    if(player_addr->HP<0){
+        player_addr->HP=0;
+    }
+    if(player_addr->SP<0){
+        player_addr->SP=0;
+    }
+    cout << player_addr->name << "'s HP and SP is decreased by 3 due to " << boss_addr->name << " annoying words..." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;   sleep_for(::seconds(sleep_t));
+}
+
+void boss_skill4(Role *player_addr, Role *boss_addr){
+    cout << boss_addr->name << " : You're under my control..." << endl; sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : You have to hurt yourself..." << endl;   sleep_for(::seconds(sleep_t));
+    cout << player_addr->name << " : W..ait?! I cannot control my body.... NO!!!" << endl;  sleep_for(::seconds(sleep_t));
+    for(int i=0; i<3;i++){
+        cout << player_addr->name << " : Keep hurting himself..." << endl;  sleep_for(::seconds(sleep_t));
+        player_addr->HP-=2; player_addr->SP-=2;
+        if(player_addr->HP<0){
+            player_addr->HP=0;
+            break;
+        }
+        if(player_addr->SP<0){
+            player_addr->SP=0;
+        }
+    cout << player_addr->name << "'s HP and SP decreased by 2...." << '\n' << "HP: "<< player_addr->HP << " SP: "<< player_addr->SP << endl; sleep_for(::seconds(sleep_t));
+    }
+}
