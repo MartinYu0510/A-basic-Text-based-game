@@ -10,6 +10,7 @@
 #include "game_plot.h"
 #include <vector>
 #include "ascii.h"
+#include "game_content.h"
 using namespace std;
 using namespace ::this_thread;
 using namespace chrono;
