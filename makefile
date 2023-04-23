@@ -24,3 +24,4 @@ main: main.o game_content.o game_plot.o saveload.o start_menu.o game_status.o as
 
 clear: 
 	rm -f *.o main
+.PHONY:	clear
