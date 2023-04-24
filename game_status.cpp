@@ -75,7 +75,7 @@ int random_event(string event){ //Generating random event i.e. critical hit and 
     srand(time(NULL));      //Randomize the seed for random function
     int result;
     if(event=="critical" || event=="def"){      //Random event for critical hit
-        result=rand()%2;
+        result=(rand()%2 + rand()%2 + rand()%2)/3;
         return result;
     }
     else if (event=="move"){    //Random for boss's moves
