@@ -47,8 +47,10 @@ char menu(){
     return option;
 }
 
-void ending(bool result){   //True=good ending && False=bad ending
+void ending(bool result){   //True=good(real)/bad(fake) ending && False=lose ending
     if(result){
+        cout << "THE END"<< endl;
+        cout << "THANK FOR PLAYING" << endl;
         return;
     }
     else{
@@ -61,6 +63,5 @@ void ending(bool result){   //True=good ending && False=bad ending
         int index=random_event("ending_lose")-1;
         cout << lamo[index] << endl;
         lamo.clear();
-        exit(0);
     }
 }
