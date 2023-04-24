@@ -1,6 +1,3 @@
-//
-// Created by MartinYu on 9/4/2023.
-//
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -133,7 +130,7 @@ void plot2_ending(Role *player_addr, Role *boss_addr, int player_loss){
         cout << player_addr->name << " : I am not in danger, " << boss_addr->name << endl;  sleep_for(::seconds(sleep_t));
         cout << player_addr->name << " : I AM THE DANGER !" << endl;    sleep_for(::seconds(sleep_t));
         cout << "[" << player_addr->name << " is ready to give " << boss_addr->name << " the last punch]" << endl;  sleep_for(::seconds(sleep_t));
-        cout << "Do you want to forgive " << boss_addr->name << " ? (Yes/No)" << endl;
+        cout << "Do you want to forgive " << boss_addr->name << " ? (Yes/No)";
         while(true) {
             cin >> option;
             transform(option.begin(), option.end(), option.begin(), ::tolower);
@@ -171,7 +168,7 @@ void plot3_start(Role *player_addr, Role *boss_addr){
     cout << player_addr->name << " : Huh....Huh....I finally arrive..." << endl;    sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Oh No!!! I am late for 1 minutes !!! OH GOD WHY WHY WHY..." << endl;   sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : HAHA!! Look like someone is late today!!" << endl;   sleep_for(::seconds(sleep_t));
-    cout << "[" << boss_addr->name << " comes out and laught at " << player_addr->name << endl; sleep_for(::seconds(sleep_t));
+    cout << "[" << boss_addr->name << " comes out and laught at " << player_addr->name << "]" << endl; sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : So?? You are going to report to your favourite boss??" << endl;  sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : NONONO! I am a good people. If I tell him, you will get a very serious penalty. " << endl;   sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Why don't you give me somethings... Maybe I can help you to speak somethings to the boss!" << endl;  sleep_for(::seconds(sleep_t));
@@ -203,7 +200,7 @@ void plot3_ending(Role *player_addr, Role *boss_addr, int player_loss){
         cout << player_addr->name << " : You're wrong! You lost because you only fight with your mouth, but I win becuase I fight with my hands!!!" << endl;    sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : Please forgive me... I just want to get a stable job and get an excellent promotion..." << endl; sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : I just want to earn more money... please..." << endl;    sleep_for(::seconds(sleep_t));
-        cout << "Do you want to forgive " << boss_addr->name << " ? (Yes/No)" << endl;
+        cout << "Do you want to forgive " << boss_addr->name << " ? (Yes/No)" ;
         while(true) {
             cin >> option;
             transform(option.begin(), option.end(), option.begin(), ::tolower);
@@ -278,6 +275,7 @@ void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){
             cout << player_addr->name << " : You will eventually understand this society reject you!! It beat you !!!" << endl; sleep_for(::seconds(sleep_t));
             cout << player_addr->name << " : I! BEAT! YOU!!" << endl;   sleep_for(::seconds(sleep_t));
             cout << "[" << player_addr->name << " leaves the room]" << endl;    sleep_for(::seconds(sleep_t));
+            cout << "GOOD END" << endl;
         }
         else{
             cout << player_addr->name << " : OK! I believe in you" << endl; sleep_for(::seconds(sleep_t));
@@ -286,6 +284,6 @@ void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){
             cout << boss_addr->name << " : Yes!!! You are my slave, right?" << endl;    sleep_for(::seconds(sleep_t));
             cout << player_addr->name << " : Yes... I am the slave..." << endl; sleep_for(::seconds(sleep_t));
             cout << boss_addr->name << " : HAHAHAHA! This is my victory!!!" << endl;    sleep_for(::seconds(sleep_t));
+            cout << "BAD END" << endl;
         }
     }
-}
