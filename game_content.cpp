@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -10,14 +9,16 @@
 #include "game_plot.h"
 #include <vector>
 #include "ascii.h"
-#include "game_content.h"
 using namespace std;
 using namespace ::this_thread;
 using namespace chrono;
 const int sleep_t=1;
 vector<string> trashword;
 
-void set1(Role *player_addr, int &set, bool player_loss){
+void set1(Role *player_addr, int &set, bool &player_loss){
+    if(player_loss){
+        return;
+    }
     Role boss;
     boss=boss_status_init(set);
     Role *boss_addr=&boss;
@@ -60,9 +61,11 @@ void set1(Role *player_addr, int &set, bool player_loss){
                 int chance;
                 chance=random_event("def");
                 if(chance==1){
+                    cout << player_addr->name << " gain a defense." << endl;
                     player_addr->defense=true;
                 }
                 else{
+                    cout << player_addr->name << " cannot gain a defense." << endl;
                     player_addr->defense=false;
                 }
                 cout << player_addr->name << " use defense." << endl;   sleep_for(::seconds(sleep_t));
@@ -82,6 +85,7 @@ void set1(Role *player_addr, int &set, bool player_loss){
             cout << boss_addr->name << " : You are making me.... ANGRYYYYY!!!!!!!!" << endl;    sleep_for(::seconds(sleep_t));
             cout << "[" << boss_addr->name << " get into Overloading mode...]" << endl;
             cout << "[" << boss_addr->name << "'s attack rose...]" << endl;     sleep_for(::seconds(sleep_t));
+            boss_addr->Attack+=2;
             cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;    sleep_for(::seconds(sleep_t));
             boss_skill1(player_addr, boss_addr);
         }
@@ -99,6 +103,9 @@ void set1(Role *player_addr, int &set, bool player_loss){
                 }
                 else{
                     player_addr->HP-=boss_addr->Attack;
+                    if(player_addr->HP<0){
+                        player_addr->HP=0;
+                    }
                     cout << player_addr->name << "'s HP decreases to " << player_addr->HP << endl;  sleep_for(::seconds(sleep_t));
                 }
                 break;
@@ -120,6 +127,9 @@ void set1(Role *player_addr, int &set, bool player_loss){
                     boss_skill1(player_addr, boss_addr);
                     boss_addr->boss_skill_charge-=3;
                 }
+                else{
+                    cout << boss_addr->name << " does not have enough skill point to use skill." << endl;
+                }
                 break;
             }
         boss_addr->boss_skill_charge++;
@@ -127,7 +137,7 @@ void set1(Role *player_addr, int &set, bool player_loss){
     }
     plot1_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        ending(false);
+        return;
     }
     string option;
     set++;
@@ -145,9 +155,14 @@ void set1(Role *player_addr, int &set, bool player_loss){
     }
 }
 
-void skill_choice(Role *player_addr, int &set){
+void skill_choice(Role *player_addr, int &set, bool &player_loss){
+    if(player_loss){
+        return;
+    }
     cout << "[" << player_addr->name << "'s HP is regenerated to 20 due to breakfast]" << endl;   sleep_for(::seconds(sleep_t));
     player_addr->HP=20;
+    player_addr->SP=10;
+    player_addr->Attack=3;
     cout << "[" << player_addr->name << " also gain 10 skill point for using special skill]" << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Maybe I should buy something in 7-11...eH? What are those things?" << endl;    sleep_for(::seconds(sleep_t));
     cout << "You can choose your own skill here. Remember, you cannot change your skill after confirmation..." << endl;
@@ -189,7 +204,7 @@ void skill_choice(Role *player_addr, int &set){
                 case '2':
                     skill2_ascii();
                     cout << "A horrible skill as people always mention that 80% of the humanity was killed due to rumbling a long time ago...." << endl;
-                    cout << "Enemy will be damged by 10HP after activating this skill with 12 SP." << endl;
+                    cout << "Enemy will be damged by 10HP after activating this skill with 10 SP." << endl;
                     break;
                 case '3':
                     skill3_ascii();
@@ -210,7 +225,10 @@ void skill_choice(Role *player_addr, int &set){
 
     cout << player_addr->name << " learn " << player_addr->skill << endl;   sleep_for(::seconds(sleep_t));
 }
-void set2(Role *player_addr, int &set, bool player_loss){
+void set2(Role *player_addr, int &set, bool &player_loss){
+    if(player_loss){
+        return;
+    }
     Role boss;
     boss=boss_status_init(set);
     Role *boss_addr=&boss;
@@ -226,7 +244,7 @@ void set2(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 52 || move < 49) {
+                if (move > 51 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
@@ -253,10 +271,13 @@ void set2(Role *player_addr, int &set, bool player_loss){
                     contin=false;
                     int chance;
                     chance = random_event("def");
-                    if (chance == 1) {
-                        player_addr->defense = true;
-                    } else {
-                        player_addr->defense = false;
+                    if(chance==1){
+                        cout << player_addr->name << " gain a defense." << endl;
+                        player_addr->defense=true;
+                    }
+                    else{
+                        cout << player_addr->name << " cannot gain a defense." << endl;
+                        player_addr->defense=false;
                     }
                     cout << player_addr->name << " use defense." << endl;
                     sleep_for(::seconds(sleep_t));
@@ -285,6 +306,7 @@ void set2(Role *player_addr, int &set, bool player_loss){
             cout << boss_addr->name << " : You are making me.... ANGRYYYYY!!!!!!!!" << endl;    sleep_for(::seconds(sleep_t));
             cout << "[" << boss_addr->name << " get into TryHard mode...]" << endl;
             cout << "[" << boss_addr->name << "'s attack rose...]" << endl;     sleep_for(::seconds(sleep_t));
+            boss_addr->Attack+=2;
             cout << boss_addr->name << " : use special skill, " << boss_addr->skill << endl;    sleep_for(::seconds(sleep_t));
             boss_skill2(player_addr, boss_addr);
         }
@@ -302,6 +324,9 @@ void set2(Role *player_addr, int &set, bool player_loss){
                 }
                 else{
                     player_addr->HP-=boss_addr->Attack;
+                    if(player_addr->HP<0){
+                        player_addr->HP=0;
+                    }
                     cout << player_addr->name << "'s HP decreases to " << player_addr->HP << endl;  sleep_for(::seconds(sleep_t));
                 }
                 break;
@@ -323,17 +348,20 @@ void set2(Role *player_addr, int &set, bool player_loss){
                     boss_skill2(player_addr, boss_addr);
                     boss_addr->boss_skill_charge-=3;
                 }
+                else{
+                    cout << boss_addr->name << " does not have enough skill point to use skill." << endl;
+                }
                 break;
         }
         boss_addr->boss_skill_charge++;
         player_addr->defense=false;
     }
-    set++;
     plot2_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        ending(false);
+        return;
     }
     string option;
+    set++;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
         cin >> option;
@@ -346,14 +374,18 @@ void set2(Role *player_addr, int &set, bool player_loss){
             break;
         }
     }
+
 }
 
-void set3(Role *player_addr, int &set, bool player_loss){
+void set3(Role *player_addr, int &set, bool &player_loss){
+    if(player_loss){
+        return;
+    }
     Role boss;
     boss=boss_status_init(set);
     cout << "[" << player_addr->name << "'s HP, SP and Attack is increased by 15, 20 and 2 respectively" << endl;   sleep_for(::seconds(sleep_t));
-    player_addr->HP+=15;player_addr->SP+=20;player_addr->Attack=4;
     Role *boss_addr=&boss;
+    player_addr->HP+=15;player_addr->SP+=20;player_addr->Attack=4;
     int hp=boss_addr->HP; boss_addr->half_hp=false;
     plot3_start(player_addr, boss_addr);
     while(check_winloss(player_addr->HP, boss_addr->HP, player_loss)){
@@ -366,7 +398,7 @@ void set3(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 52 || move < 49) {
+                if (move > 51 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
@@ -393,10 +425,13 @@ void set3(Role *player_addr, int &set, bool player_loss){
                     contin=false;
                     int chance;
                     chance = random_event("def");
-                    if (chance == 1) {
-                        player_addr->defense = true;
-                    } else {
-                        player_addr->defense = false;
+                    if(chance==1){
+                        cout << player_addr->name << " gain a defense." << endl;
+                        player_addr->defense=true;
+                    }
+                    else{
+                        cout << player_addr->name << " cannot gain a defense." << endl;
+                        player_addr->defense=false;
                     }
                     cout << player_addr->name << " use defense." << endl;
                     sleep_for(::seconds(sleep_t));
@@ -443,6 +478,9 @@ void set3(Role *player_addr, int &set, bool player_loss){
                 }
                 else{
                     player_addr->HP-=boss_addr->Attack;
+                    if(player_addr->HP<0){
+                        player_addr->HP=0;
+                    }
                     cout << player_addr->name << "'s HP decreases to " << player_addr->HP << endl;  sleep_for(::seconds(sleep_t));
                 }
                 break;
@@ -464,16 +502,19 @@ void set3(Role *player_addr, int &set, bool player_loss){
                     boss_skill3(player_addr, boss_addr);
                     boss_addr->boss_skill_charge-=3;
                 }
+                else{
+                    cout << boss_addr->name << " does not have enough skill point to use skill." << endl;
+                }
                 break;
         }
         boss_addr->boss_skill_charge++;
         player_addr->defense=false;
     }
-    string option;
     plot3_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        ending(false);
+        return;
     }
+    string option;
     set++;
     cout << "Do you want to save your game ?(Yes/No) " ;
     while(true) {
@@ -489,12 +530,15 @@ void set3(Role *player_addr, int &set, bool player_loss){
     }
 }
 
-void set4(Role *player_addr, int &set, bool player_loss){
+void set4(Role *player_addr, int &set, bool &player_loss){
+    if(player_loss){
+        return;
+    }
     Role boss;
     boss=boss_status_init(set);
+    Role *boss_addr=&boss;
     cout << "[" << player_addr->name << "'s HP, SP and Attack is increased by 15, 25 and 2 respectively" << endl;   sleep_for(::seconds(sleep_t));
     player_addr->HP+=15;player_addr->SP+=25;player_addr->Attack=6;
-    Role *boss_addr=&boss;
     int hp=boss_addr->HP; boss_addr->half_hp=false;
     plot4_start(player_addr,boss_addr);
     while(check_winloss(player_addr->HP, boss_addr->HP, player_loss)){
@@ -507,7 +551,7 @@ void set4(Role *player_addr, int &set, bool player_loss){
             while (true) {
                 cout << "Your move(1/2/3/4): ";
                 cin >> move;
-                if (move > 52 || move < 49) {
+                if (move > 51 || move < 49) {
                     cout << "Please input a valid value!!" << endl;
                 } else {
                     break;
@@ -534,10 +578,13 @@ void set4(Role *player_addr, int &set, bool player_loss){
                     contin=false;
                     int chance;
                     chance = random_event("def");
-                    if (chance == 1) {
-                        player_addr->defense = true;
-                    } else {
-                        player_addr->defense = false;
+                    if(chance==1){
+                        cout << player_addr->name << " gain a defense." << endl;
+                        player_addr->defense=true;
+                    }
+                    else{
+                        cout << player_addr->name << " cannot gain a defense." << endl;
+                        player_addr->defense=false;
                     }
                     cout << player_addr->name << " use defense." << endl;
                     sleep_for(::seconds(sleep_t));
@@ -584,6 +631,9 @@ void set4(Role *player_addr, int &set, bool player_loss){
                 }
                 else{
                     player_addr->HP-=boss_addr->Attack;
+                    if(player_addr->HP<0){
+                        player_addr->HP=0;
+                    }
                     cout << player_addr->name << "'s HP decreases to " << player_addr->HP << endl;  sleep_for(::seconds(sleep_t));
                 }
                 break;
@@ -605,6 +655,9 @@ void set4(Role *player_addr, int &set, bool player_loss){
                     boss_skill4(player_addr, boss_addr);
                     boss_addr->boss_skill_charge-=3;
                 }
+                else{
+                    cout << boss_addr->name << " does not have enough skill point to use skill." << endl;
+                }
                 break;
         }
         boss_addr->boss_skill_charge++;
@@ -612,24 +665,30 @@ void set4(Role *player_addr, int &set, bool player_loss){
     }
     plot4_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        ending(false);
+        return;
     }
 }
 
-void new_game(){        //Starting a new game
+bool new_game(){        //Starting a new game
     int set=1;
     bool player_loss=false;
     Role player;
     Role *player_addr=&player;
     player=player_status_main();
     set1(player_addr, set, player_loss);
-    skill_choice(player_addr, set);
+    skill_choice(player_addr, set, player_loss);
     set2(player_addr, set, player_loss);
     set3(player_addr, set, player_loss);
     set4(player_addr, set, player_loss);
+    if(player_loss){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
-void load_game(){       //Loading the original game
+bool load_game(){       //Loading the original game
     int set;
     bool player_loss=false;
     Role player;
@@ -637,19 +696,31 @@ void load_game(){       //Loading the original game
     player=load(player_addr, set);
     switch(set){
         case 2:
-            skill_choice(player_addr, set);
+            skill_choice(player_addr, set, player_loss);
             set2(player_addr, set, player_loss);
             set3(player_addr, set, player_loss);
             set4(player_addr, set, player_loss);
             break;
         case 3:
+            set2(player_addr, set, player_loss);
             set3(player_addr, set, player_loss);
             set4(player_addr, set, player_loss);
             break;
         case 4:
+            set3(player_addr, set, player_loss);
+            set4(player_addr, set, player_loss);
+            break;
+        case 5:
             set4(player_addr, set, player_loss);
             break;
     }
+    if(player_loss){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
+
 
 
