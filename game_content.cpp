@@ -74,6 +74,7 @@ void set1(Role *player_addr, int &set, bool &player_loss){
                 cout << player_addr->name << " use escape." << endl;    sleep_for(::seconds(sleep_t));
                 cout << boss_addr->name << " You are a loser !!!" << endl;  sleep_for(::seconds(sleep_t));
                 ending(false);
+                exit(0);
                 break;
         }
         if(boss_addr->HP<=0){
@@ -294,6 +295,7 @@ void set2(Role *player_addr, int &set, bool &player_loss){
                     cout << boss_addr->name << " You are a loser !!!" << endl;
                     sleep_for(::seconds(sleep_t));
                     ending(false);
+                    exit(0);
                     break;
                 }
             }
@@ -448,6 +450,7 @@ void set3(Role *player_addr, int &set, bool &player_loss){
                     cout << boss_addr->name << " You are a loser !!!" << endl;
                     sleep_for(::seconds(sleep_t));
                     ending(false);
+                    exit(0);
                     break;
             }
         }
@@ -601,6 +604,7 @@ void set4(Role *player_addr, int &set, bool &player_loss){
                     cout << boss_addr->name << " You are a loser !!!" << endl;
                     sleep_for(::seconds(sleep_t));
                     ending(false);
+                    exit(0);
                     break;
             }
         }
