@@ -261,7 +261,7 @@ void boss_skill2(Role *player_addr, Role *boss_addr){
 void boss_skill3(Role *player_addr, Role *boss_addr){
     cout << boss_addr->name << " : Hey " << player_addr->name << endl;  sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : You're really a dumb, a loser, a kid, a freak, a deviance." << endl;     sleep_for(::seconds(sleep_t));
-    cout << boss_addr->name << " : Why don't you just die??? Why don't you just quite??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
+    cout << boss_addr->name << " : Why don't you just die??? Why don't you just quit??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
     cout << "[" << boss_addr->name << " just keeps talking and repeating]" << endl; sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : You're very annoying...." << endl; sleep_for(::seconds(sleep_t));
     player_addr->HP-=3; player_addr->SP-=3;
