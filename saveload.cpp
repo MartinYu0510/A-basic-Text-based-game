@@ -18,7 +18,7 @@ void save(Role *player_addr, int set) {
     savegame.open("saveload.txt");
     if(savegame.fail())     cout << "File cannot open" << endl;
     else{
-        savegame << player->name  <<  ' ' << player->HP << ' ' << player->SP << ' ' << player->Attack << ' ' << player->skill << ' ' << player_addr->good_end << endl ;
+        savegame << player->name  <<  ' ' << player->HP << ' ' << player->SP << ' ' << player->Attack << ' ' << player_addr->good_end << ' ' << player->skill << endl ;
         savegame << set << endl;
         savegame.close();
         cout << "Progress is successfully saved !" << endl;
@@ -48,8 +48,8 @@ Role load(Role *player_addr, int &set){
                     temp[i] = word;
                     i++;
                 }
-                player->name=temp[0];   player->skill=temp[4];  player->HP=stoi(temp[1]);   player->Attack=stoi(temp[2]);   player->SP=stoi(temp
-                        [3]);   player_addr->good_end=stoi(temp[5]);
+                player->name=temp[0];   player->skill=temp[5];  player->HP=stoi(temp[1]);   player->Attack=stoi(temp[2]);   player->SP=stoi(temp
+                        [3]);   player_addr->good_end=stoi(temp[4]);
                 delete[]temp;
                 count++;
             }
