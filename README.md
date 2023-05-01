@@ -20,12 +20,6 @@
   <p align="center">
     A local RPG game that is full of memes!
     <br />
-    - New Opportunities!
-    - New Facilities!
-    - New Experience!
-    And so much more to explore!
-    
-    <br />
     <a href="https://github.com/MartinYu0510/Engg1340_Project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
