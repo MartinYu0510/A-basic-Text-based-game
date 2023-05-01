@@ -16,7 +16,7 @@ bool maingame(char mode){
             break;
         case '3':
             cout << "This game is made by Martin Yu, Boris Wong and IDonnol." << '\n' << "This game is not funny because we aim to get good grade only." << '\n' << "If you want good gaming experience, I highly suggest you to play Elden Ring!!" << endl;
-            player_loss=NULL;
+            player_loss=-1;
             break;
         case '4':
             cout << "Hope to seee you again !";
@@ -32,7 +32,7 @@ int main() {
     while (true) {
         mode = menu();
         player_loss = maingame(mode);
-        if (player_loss != NULL) {
+        if (player_loss != -1) {
             ending(!player_loss);
             while (true) {
                 if (player_loss) {
