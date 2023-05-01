@@ -287,3 +287,4 @@ void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){
             cout << "BAD END" << endl;
         }
     }
+}    
