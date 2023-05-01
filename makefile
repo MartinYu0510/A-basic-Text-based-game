@@ -22,7 +22,7 @@ game_content.o: game_content.cpp game_content.h game_plot.h saveload.h start_men
 main.o: main.cpp game_content.h game_plot.h saveload.h start_menu.h game_status.h ascii.h
 	g++ -pedantic-errors -std=c++11 -c $<
 
-clear: 
+clean: 
 	rm -f *.o main
 
 .PHONY:	clear
