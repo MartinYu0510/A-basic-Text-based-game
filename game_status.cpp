@@ -131,7 +131,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
                 boss_addr->HP -= (player_addr->Attack + 5);
             }
 
-            if (boss_addr->HP < 0) {
+            if (boss_addr->HP <=0) {
                 boss_addr->HP = 0;
                 cout << player_addr->name << " : It's fine after all. You're weakkkk..." << endl;
             }
@@ -155,7 +155,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
             cout << boss_addr->name << " : ATTACK ON TITIAN!!!" << endl;
             sleep_for(::seconds(sleep_t));
             boss_addr->HP -= 10;
-            if (boss_addr->HP < 0) {
+            if (boss_addr->HP <= 0) {
                 boss_addr->HP = 0;
                 cout << player_addr->name << " : The people who witnessed these things..." << endl;
                 sleep_for(::seconds(sleep_t));
@@ -189,7 +189,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
                 cout << boss_addr->name << " : AHHHHHHH!" << endl;
                 sleep_for(::seconds(sleep_t));
                 boss_addr->HP -= 3;
-                if (boss_addr->HP < 0) {
+                if (boss_addr->HP <= 0) {
                     boss_addr->HP = 0;
                     cout << player_addr->name << " : There's only one reason why you lost, " << boss_addr->name << endl;
                     sleep_for(::seconds(sleep_t));
@@ -222,7 +222,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
                 sleep_for(::seconds(sleep_t));
                 boss_addr->HP -= (player_addr->Attack * 2);
                 boss_addr->HP -= 2;
-                if (boss_addr->HP == 0) {
+                if (boss_addr->HP <= 0) {
                     boss_addr->HP = 0;
                     cout << player_addr->name << " : Mario Time !!!" << endl;
                     sleep_for(::seconds(sleep_t));
