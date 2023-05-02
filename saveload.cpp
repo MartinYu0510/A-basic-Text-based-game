@@ -43,13 +43,13 @@ Role load(Role *player_addr, int &set){
                 string word;
                 int i = 0;
                 string *temp;
-                temp = new string[5];
+                temp = new string[6];
                 while (line_in >> word) {
                     temp[i] = word;
                     i++;
                 }
-                player->name=temp[0];   player->skill=temp[5];  player->HP=stoi(temp[1]);   player->Attack=stoi(temp[2]);   player->SP=stoi(temp
-                        [3]);   player_addr->good_end=stoi(temp[4]);
+                player->name=temp[0];   player->skill=temp[5];  player->HP=stoi(temp[1]);   player->Attack=stoi(temp[3]);   player->SP=stoi(temp
+                        [2]);   player_addr->good_end=stoi(temp[4]);
                 delete[]temp;
                 count++;
             }
