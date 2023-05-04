@@ -10,7 +10,7 @@
 #include "game_content.h"
 using namespace std;
 
-void save(Role *player_addr, int set) {
+void save(Role *player_addr, int set) { //it is used to save the player's data, and it will produce "Progress is successfully saved !" if it's successful, else produce "File cannot open"
     Role *player;
     player = new Role;
     *player = *player_addr;
@@ -26,7 +26,7 @@ void save(Role *player_addr, int set) {
     delete player;
 }
 
-Role load(Role *player_addr, int &set){
+Role load(Role *player_addr, int &set){ //upload the player's data where the player stopped before
     Role temp;
     Role *player=new Role;
     *player=*player_addr;
