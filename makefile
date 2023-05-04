@@ -1,3 +1,6 @@
+//using command "make main" can compile the whole game and produce ./main
+//using command "make clean" will remove all the .o and the main as well
+
 main: main.o game_content.o game_plot.o saveload.o start_menu.o game_status.o ascii.o
 	g++ -pedantic-errors -std=c++11 $^ -o $@
 	
