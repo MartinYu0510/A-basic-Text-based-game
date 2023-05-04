@@ -105,7 +105,7 @@ bool check_winloss(int player_hp, int boss_hp, bool &player_loss){      //Checki
     return true;
 }
 
-bool player_skill(Role *player_addr, Role *boss_addr, string skill){
+bool player_skill(Role *player_addr, Role *boss_addr, string skill){ //check if player can use the skill they want, if they fulfill the requirement then produce the skill's effect
     if(skill=="UnlimitedVoid") {
         if(player_addr->SP<8){
             cout << "Your SP is not enough, please choose another choice." << endl;
@@ -234,7 +234,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){
     return false;
 }
 
-void boss_skill1(Role *player_addr, Role *boss_addr){
+void boss_skill1(Role *player_addr, Role *boss_addr){   //Produce the scene and effect when boss skill 1 is acted on player
     for(int i=0; i<2;i++){
         cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
         player_addr->HP-=2;
@@ -246,7 +246,7 @@ void boss_skill1(Role *player_addr, Role *boss_addr){
     }
     cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
 }
-void boss_skill2(Role *player_addr, Role *boss_addr){
+void boss_skill2(Role *player_addr, Role *boss_addr){ //Produce the scene and effect when boss skill 2 is acted on player
     cout << boss_addr->name << " : Feel Pain. Contemplate Pain." << endl;   sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Accept Pain. Know Pain!" << endl;    sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : One who does know pain cannot possibly understand true pain"<< endl;     sleep_for(::seconds(sleep_t));
@@ -258,7 +258,7 @@ void boss_skill2(Role *player_addr, Role *boss_addr){
     cout << player_addr->name << "'s hp is decreased by 5." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;    sleep_for(::seconds(sleep_t));
 }
 
-void boss_skill3(Role *player_addr, Role *boss_addr){
+void boss_skill3(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 3 is acted on player
     cout << boss_addr->name << " : Hey " << player_addr->name << endl;  sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : You're really a dumb, a loser, a kid, a freak, a deviance." << endl;     sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Why don't you just die??? Why don't you just quit??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
@@ -273,8 +273,8 @@ void boss_skill3(Role *player_addr, Role *boss_addr){
     }
     cout << player_addr->name << "'s HP and SP is decreased by 3 due to " << boss_addr->name << " annoying words..." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;   sleep_for(::seconds(sleep_t));
 }
-
-void boss_skill4(Role *player_addr, Role *boss_addr){
+ 
+void boss_skill4(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 4 is acted on player
     cout << boss_addr->name << " : You're under my control..." << endl; sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : You have to hurt yourself..." << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : W..ait?! I cannot control my body.... NO!!!" << endl;  sleep_for(::seconds(sleep_t));
