@@ -1,5 +1,5 @@
-<a name="readme-top"></a>
 
+<a name="readme-top"></a>
 
 
 
@@ -35,6 +35,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+  <li><a href="#about-the-game">About The Game</a></li>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
@@ -45,18 +46,23 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+        <ul>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#macOS">macOS</a></li>
+      </ul>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
+<!-- ABOUT THE PROJECT -->
+## About The Game
 
 
 <!-- ABOUT THE PROJECT -->
@@ -64,16 +70,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,16 +79,9 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+- 100% C++ [![CPP][CPP.com]][cpp-url]
+- 200% Love
+- 300% Stress
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,62 +90,80 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Although this project will be marked using Ubuntu server in HKU, you can still use it in any system
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+<!-- WINDOWS -->
+#### Windows
+A compiler is required to compiler the cpp files. Here we will recommend users to setup with MingW. Here is the modified guide, originally written by [Microsoft Inc.](https://code.visualstudio.com/docs/cpp/config-mingw).
+
+1.  Get the latest version of Mingw-w64 via  [MSYS2](https://www.msys2.org/), which provides up-to-date native builds of GCC, Mingw-w64, and other helpful C++ tools and libraries. You can download the latest installer from the MSYS2 page or use this  [link to the installer](https://github.com/msys2/msys2-installer/releases/download/2022-06-03/msys2-x86_64-20220603.exe).
+2. Follow the  **Installation**  instructions on the  [MSYS2 website](https://www.msys2.org/)  to install Mingw-w64. Take care to run each required Start menu and  `pacman`  command.
+3. Install the Mingw-w64 toolchain (`pacman -S --needed base-devel mingw-w64-x86_64-toolchain`). Run the  `pacman`  command in a MSYS2 terminal. Accept the default to install all the members in the  `toolchain`  group.
+4. install make
+	```pwsh
+	winget install GnuWin32.Make
+	```
+5. Add the path to your Mingw-w64  `bin`  folder and the path to  your GnuWin32 file to the Windows  `PATH`  environment variable by using the following steps:
+
+	1.  In the Windows search bar, type 'settings' to open your Windows Settings.
+	2.  Search for  **Edit environment variables for your account**.
+	3.  Choose the  `Path`  variable in your  **User variables**  and then select  **Edit**.
+	4.  Select  **New**  and add the Mingw-w64 destination folder path to the system path. The exact path depends on which version of Mingw-w64 you have installed and where you installed it. If you used the settings above to install Mingw-w64, then add this to the path:  `C:\msys64\mingw64\bin`; If you used the settings above to install GnuWin32.Make, then add this to the path: `C:\Program Files (x86)\GnuWin32\bin`
+	5.  Select  **OK**  to save the updated PATH. You will need to reopen any console windows for the new PATH location to be available.
+6. install make
+	```pwsh
+	winget install GnuWin32.Make
+	```
+
+<!-- LINUX -->
+#### Linux
+Linux systems are easier to setup the g++ environment.
+1. Install g++ and makefile in terminal
+	```sudo apt install build-essential```
+2. Install make to rune makefile
+	```sudo apt install make```
+2. Press enter for any asked questions.
+3. Done!
+
+<!-- MACOS -->
+#### MacOS
+~~As a typical engineer, I don't use MacBooks. So, we will NOT provide any support here.~~
+<sub><sup>Use Windows, OK?😉</sup></sub>
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/MartinYu0510/Engg1340_Project.git
    ```
-3. Install NPM packages
+2. In the destination file, compile the code using makefile
+	   ```sh
+	   make
+	   ```
+3. run the game `main`
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ./main
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
+- [ ] Add Changelog
+- [ ] Better CLI Ux
+- [ ] Add More ASCII arts
 - [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+    - [ ] Trad. Chinese
+    - [ ] Cantonese
+- [ ] GUI
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/MartinYu0510/Engg1340_Project/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +174,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "IMPROVEMENT".
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -178,21 +187,12 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - kc072015@connect.hku.hk
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/MartinYu0510/Engg1340_Project](https://github.com/MartinYu0510/Engg1340_Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -217,29 +217,14 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/MartinYu0510/Engg1340_Project?style=for-the-badge
 [contributors-url]: https://github.com/MartinYu0510/Engg1340_Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/MartinYu0510/Engg1340_Project?style=for-the-badge
 [forks-url]: https://github.com/MartinYu0510/Engg1340_Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/MartinYu0510/Engg1340_Project?style=for-the-badge
 [stars-url]: https://github.com/MartinYu0510/Engg1340_Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/MartinYu0510/Engg1340_Project?style=for-the-badge
 [issues-url]: https://github.com/MartinYu0510/Engg1340_Project/issues
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[CPP.com]: https://img.shields.io/badge/-c++-black?logo=c%2B%2B&style=for-the-badge
+[cpp-url]: https://isocpp.org/
