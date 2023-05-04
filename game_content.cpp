@@ -15,7 +15,7 @@ using namespace chrono;
 const int sleep_t=1;
 vector<string> trashword;
 
-void set1(Role *player_addr, int &set, bool &player_loss){
+void set1(Role *player_addr, int &set, bool &player_loss){ //for set1
     if(player_loss){
         return;
     }
@@ -156,7 +156,7 @@ void set1(Role *player_addr, int &set, bool &player_loss){
     }
 }
 
-void skill_choice(Role *player_addr, int &set, bool &player_loss){
+void skill_choice(Role *player_addr, int &set, bool &player_loss){  //the part for player to execute their skills
     if(player_loss){
         return;
     }
@@ -226,7 +226,7 @@ void skill_choice(Role *player_addr, int &set, bool &player_loss){
 
     cout << player_addr->name << " learn " << player_addr->skill << endl;   sleep_for(::seconds(sleep_t));
 }
-void set2(Role *player_addr, int &set, bool &player_loss){
+void set2(Role *player_addr, int &set, bool &player_loss){ //for set2
     if(player_loss){
         return;
     }
@@ -379,7 +379,7 @@ void set2(Role *player_addr, int &set, bool &player_loss){
 
 }
 
-void set3(Role *player_addr, int &set, bool &player_loss){
+void set3(Role *player_addr, int &set, bool &player_loss){ //for set3
     if(player_loss){
         return;
     }
@@ -533,7 +533,7 @@ void set3(Role *player_addr, int &set, bool &player_loss){
     }
 }
 
-void set4(Role *player_addr, int &set, bool &player_loss){
+void set4(Role *player_addr, int &set, bool &player_loss){ //for set4
     if(player_loss){
         return;
     }
