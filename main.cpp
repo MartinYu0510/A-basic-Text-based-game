@@ -5,7 +5,7 @@
 #include "game_content.h"
 using namespace std;
 
-bool maingame(char mode){
+bool maingame(char mode){ //for player to choose the option in the game's opening and it will produce relative functions
     bool player_loss;
     switch(mode){
         case '1':
