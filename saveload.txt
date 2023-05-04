@@ -1,2 +1,2 @@
-//it is used to save the player statistic including four elements: player's name, HP, SP, and Attack
+
 
