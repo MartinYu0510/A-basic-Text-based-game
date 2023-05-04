@@ -8,7 +8,7 @@
 using namespace std;
 using namespace ::this_thread;
 
-char menu(){
+char menu(){  //it is used for the opening of the game, it will include 4 choices, 1: new game; 2: load game and go back to where you stop; 3:some credits; 4:Exit
     cout << "                         ,--,     ,--,                                                                                                                               \n"
             "          ,--,        ,---.'|  ,---.'|      ,----..                   ,--,   ,----..           ,--.                          ,--.  ,----..           ,--.            \n"
             "        ,--.'|   ,---,|   | :  |   | :     /   /   \\                ,--.'|  /   /   \\        ,--.'| ,----..              ,--/  /| /   /   \\        ,--.'| ,----..    \n"
