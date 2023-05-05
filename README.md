@@ -15,7 +15,7 @@
 <br />
 <div align="center">
 
-  <h3 align="center">Hello Hong Kong</h3>
+  <h7 align="center">Hello Hong Kong</h7>
 
   <p align="center">
     A local RPG game that is full of memes!
@@ -64,9 +64,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Game
 
-### In this game, we have
+### In this game, You will:
 
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/New_Facilities.gif"  width="300"  /></a>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/New_Facilities.gif"  width="500"  /></a>
 
 (c) GOVHK
 
@@ -86,10 +86,11 @@ He meets different things that most Hongkongers hate the most about their work, 
 
 - Or it might be an arrogant and bossy boss who always complains about your work and performance but seldom or even never compliment others. 
 
-- You probably have met one of these things that make you unhappy, 
-  and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
+You probably have met one of these things that make you unhappy, 
+and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
 
 Life still go one and we should not put our energy on something or someone who make us unhappy.
+
 If you are having a bad day or want to express your anger,
 we are always here to welcome you!
 We also hope that you can forgive you enermy after defeating them,
@@ -102,7 +103,7 @@ to share the value of tolarence
 - This is a RPG game, player will first enter thier name which create a character.
 - Then the player will be asked which command will he/she want to input
 
-<img src = "img/Main_menu.jpg"></img>
+<img src = "img/Main_menu.png"></img>
 
 After input a integer(1/2/3/4), the game will produce related function.
 There are in total 4 bosses, player has to beat them up so that we can move on to go back to the company.
