@@ -71,6 +71,13 @@
 (c) GOVHK
 
 
+### OUR TEAM
+
+<Full name><UID><GIT name>
+MA TIN YU 3036064416 MartinYu0510
+WONG KWUN YAT 3036065915 BORISWKT
+CHIK WAI CHING 3036068436 KC0072015
+
 ### THE STORY LINE
 
 For Hongkongers who have been working unhappily and want to let off steam about their work or life, this is the perfect RPG game that is designed for you. 
