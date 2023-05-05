@@ -13,7 +13,7 @@ using namespace ::this_thread;
 using namespace chrono;
 const int sleep_t=1;
 
-void plot1_start(Role *player_addr, Role *boss_addr){       //Plot for set1 starting
+void plot1_start(Role *player_addr, Role *boss_addr){       //Plot for set1 starting by inputing pointer to player and boss struct
     cout << "Hello from Hong Kong !" << '\n' << "Be inspired by..." << endl;    sleep_for(::seconds(sleep_t));
     cout << "New Opportunities !" << endl;  sleep_for(::seconds(sleep_t));
     cout << "New Facilities !" << endl; sleep_for(::seconds(sleep_t));
@@ -46,7 +46,7 @@ void plot1_start(Role *player_addr, Role *boss_addr){       //Plot for set1 star
     cout << "Boss : " << boss_addr->name << " HP: " << boss_addr->HP << " Skill: " << boss_addr->skill << endl;     sleep_for(::seconds(sleep_t));
 }
 
-void plot1_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set1 ending
+void plot1_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set1 ending by inputing pointer to player and boss struct and player_loss
     if(player_loss){
         cout << boss_addr->name << " : You were two steps too late..." << player_addr->name << endl;    sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : Just prepare to see my creator, Steve Job...." << endl; sleep_for(::seconds(sleep_t));
@@ -93,7 +93,7 @@ void plot1_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot 
     }
 }
 
-void plot2_start(Role *player_addr, Role *boss_addr){   //Plot for set2 starting
+void plot2_start(Role *player_addr, Role *boss_addr){   //Plot for set2 starting by inputing pointer to player and boss struct
     cout << "[" << player_addr->name << " finally arrive the MTR station]" << endl;     sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Fina...lly, I arrive the station. Oh! There is a car!" << endl;    sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Waittt! Be careful!!!" << endl;    sleep_for(::seconds(sleep_t));
@@ -110,7 +110,7 @@ void plot2_start(Role *player_addr, Role *boss_addr){   //Plot for set2 starting
     cout << "Boss : " << boss_addr->name << " HP: " << boss_addr->HP << " Skill: " << boss_addr->skill << endl;     sleep_for(::seconds(sleep_t));
  }
 
-void plot2_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set2 ending
+void plot2_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set2 ending by inputing pointer to player and boss struct and player_loss
     if(player_loss){
         cout << boss_addr->name << " : I TOLD YOU!! MY ONLY DEMAND IS TO GO TO WORK!" << endl;    sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : I am the employee! I am the man who work for my employer!" << endl;  sleep_for(::seconds(sleep_t));
@@ -163,7 +163,7 @@ void plot2_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot 
     }
 }
 
-void plot3_start(Role *player_addr, Role *boss_addr){  //Plot for set3 starting
+void plot3_start(Role *player_addr, Role *boss_addr){  //Plot for set3 starting by inputing pointer to player and boss struct
     cout << "[" << player_addr->name  << " finally arrives his company]" << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Huh....Huh....I finally arrive..." << endl;    sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Oh No!!! I am late for 1 minutes !!! OH GOD WHY WHY WHY..." << endl;   sleep_for(::seconds(sleep_t));
@@ -187,7 +187,7 @@ void plot3_start(Role *player_addr, Role *boss_addr){  //Plot for set3 starting
 
 }
 
-void plot3_ending(Role *player_addr, Role *boss_addr, int player_loss){ //Plot for set3 ending
+void plot3_ending(Role *player_addr, Role *boss_addr, int player_loss){ //Plot for set3 ending  by inputing pointer to player and boss struct and player_loss
     if(player_loss){
         cout << boss_addr->name << " : What a pity?!People like you will never surpass me." << endl;    sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : You should be grateful because you have lost in my hand!" << endl;   sleep_for(::seconds(sleep_t));
@@ -232,7 +232,7 @@ void plot3_ending(Role *player_addr, Role *boss_addr, int player_loss){ //Plot f
     }
 }
 
-void plot4_start(Role *player_addr, Role *boss_addr){   //Plot for set4 starting
+void plot4_start(Role *player_addr, Role *boss_addr){   //Plot for set4 starting by inputing pointer to player and boss struct
     cout << player_addr->name << " : Good morning! Boss" << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : I am so sorry that I am late." << endl;    sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Who do you think you are talking with?" << endl; sleep_for(::seconds(sleep_t));
@@ -252,7 +252,7 @@ void plot4_start(Role *player_addr, Role *boss_addr){   //Plot for set4 starting
     cout << "Boss : " << boss_addr->name << " HP: " << boss_addr->HP << " Skill: " << boss_addr->skill << endl;     sleep_for(::seconds(sleep_t));
 }
 
-void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set4 ending
+void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set4 ending by inputing pointer to player and boss struct and player_loss 
     if(player_loss){
         cout << boss_addr->name << " : Oh! Poor " << player_addr->name << "!" << endl;  sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : If you act smarter, and be a good slave, thing will not run out of control." << endl;    sleep_for(::seconds(sleep_t));
