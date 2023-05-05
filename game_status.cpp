@@ -11,7 +11,7 @@ using namespace ::this_thread;
 using namespace chrono;
 const int sleep_t=1;
 
-void input_status(Role *player) {       //Read input and assign value to player's name variable
+void input_status(Role *player) {       //Read input and assign value to player's name variable through passing pointer to struct player variable
     string option;
     cout << "Please input your character's name: ";
     cin >> player->name;
@@ -34,7 +34,7 @@ void input_status(Role *player) {       //Read input and assign value to player'
     }
 }
 
-void show_status(string name){          //Displaying the name of the character
+void show_status(string name){          //Displaying the name of the character by passing the name of player
     cout << "===============================================================================" << endl;
     cout <<  "Hello " << name << '\n' << "The game is going to start in..." << '\n' << "3" << endl;
     sleep_for(chrono::seconds(1));
@@ -45,10 +45,10 @@ void show_status(string name){          //Displaying the name of the character
 
 Role player_status_main(){      //Initializing player's status
     Role player;
-    Role *player_addr=&player;
+    Role *player_addr=&player;  //Declaring  pointer variable to player
     input_status(player_addr);      //Assigning value for player's variable
     show_status(player_addr->name);        //Printing player's  name
-    return player;
+    return player;  //outputing the struct player variable
 }
 
 Role boss_status_init(int set){     //Initializing variable for boss's status
@@ -71,7 +71,7 @@ Role boss_status_init(int set){     //Initializing variable for boss's status
     return boss;
 }
 
-int random_event(string event){ //Generating random event i.e. critical hit and boss's moves
+int random_event(string event){ //Generating random event i.e. critical hit and boss's moves by passing the event's name
     srand(time(NULL));      //Randomize the seed for random function
     int result;
     if(event=="critical" || event=="def"){      //Random event for critical hit
@@ -86,32 +86,32 @@ int random_event(string event){ //Generating random event i.e. critical hit and 
         result=1+(rand()%4);
         return result;
     }
-    else if(event =="trashword"){
+    else if(event =="trashword"){       //Random for words
         result=1+(rand()%3);
         return result;
     }
     return -1;
 }
 
-bool check_winloss(int player_hp, int boss_hp, bool &player_loss){      //Checking win or lose
+bool check_winloss(int player_hp, int boss_hp, bool &player_loss){      //Checking win or lose by passing the variable for player's and boss's hp and passing by referenec of player_loss
     if(player_hp<=0){
         player_loss=true;
-        return false;
+        return false;   //output false for stop
     }
     else if(boss_hp<=0){
         player_loss= false;
-        return false;
+        return false;   //output false for stop
     }
-    return true;
+    return true;    //output true for continue
 }
 
-bool player_skill(Role *player_addr, Role *boss_addr, string skill){ //check if player can use the skill they want, if they fulfill the requirement then produce the skill's effect
+bool player_skill(Role *player_addr, Role *boss_addr, string skill){ //check if player can use the skill they want, if they fulfill the requirement then produce the skill's effect by passing pointer variable to player and boss 
     if(skill=="UnlimitedVoid") {
         if(player_addr->SP<8){
             cout << "Your SP is not enough, please choose another choice." << endl;
-            return true;
+            return true;    //output true for detecting not enough skillpoint
         }
-        else {
+        else {  //executing the skill
             player_addr->SP-=8;
             cout << player_addr->name << " : Domain Expansion: Unlimited Void." << endl;
             sleep_for(::seconds(sleep_t));
@@ -234,7 +234,7 @@ bool player_skill(Role *player_addr, Role *boss_addr, string skill){ //check if 
     return false;
 }
 
-void boss_skill1(Role *player_addr, Role *boss_addr){   //Produce the scene and effect when boss skill 1 is acted on player
+void boss_skill1(Role *player_addr, Role *boss_addr){   //Produce the scene and effect when boss skill 1 is acted on player by passing pointer variable to player and boss
     for(int i=0; i<2;i++){
         cout << "Ding... Ding... Ding... Ding..." << endl;  sleep_for(::seconds(sleep_t));
         player_addr->HP-=2;
@@ -246,7 +246,7 @@ void boss_skill1(Role *player_addr, Role *boss_addr){   //Produce the scene and 
     }
     cout << boss_addr->name << " : Why don't you just give up?" << endl;    sleep_for(::seconds(sleep_t));
 }
-void boss_skill2(Role *player_addr, Role *boss_addr){ //Produce the scene and effect when boss skill 2 is acted on player
+void boss_skill2(Role *player_addr, Role *boss_addr){ //Produce the scene and effect when boss skill 2 is acted on player by passing pointer variable to player and boss
     cout << boss_addr->name << " : Feel Pain. Contemplate Pain." << endl;   sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Accept Pain. Know Pain!" << endl;    sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : One who does know pain cannot possibly understand true pain"<< endl;     sleep_for(::seconds(sleep_t));
@@ -258,7 +258,7 @@ void boss_skill2(Role *player_addr, Role *boss_addr){ //Produce the scene and ef
     cout << player_addr->name << "'s hp is decreased by 5." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;    sleep_for(::seconds(sleep_t));
 }
 
-void boss_skill3(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 3 is acted on player
+void boss_skill3(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 3 is acted on player by passing pointer variable to player and boss
     cout << boss_addr->name << " : Hey " << player_addr->name << endl;  sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : You're really a dumb, a loser, a kid, a freak, a deviance." << endl;     sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : Why don't you just die??? Why don't you just quit??? Why don't you just have a long sleep???" << endl;  sleep_for(::seconds(sleep_t));
@@ -274,7 +274,7 @@ void boss_skill3(Role *player_addr, Role *boss_addr){  //Produce the scene and e
     cout << player_addr->name << "'s HP and SP is decreased by 3 due to " << boss_addr->name << " annoying words..." << '\n' << "HP: " << player_addr->HP << " SP: " << player_addr->SP << endl;   sleep_for(::seconds(sleep_t));
 }
  
-void boss_skill4(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 4 is acted on player
+void boss_skill4(Role *player_addr, Role *boss_addr){  //Produce the scene and effect when boss skill 4 is acted on player by passing pointer variable to player and boss
     cout << boss_addr->name << " : You're under my control..." << endl; sleep_for(::seconds(sleep_t));
     cout << boss_addr->name << " : You have to hurt yourself..." << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : W..ait?! I cannot control my body.... NO!!!" << endl;  sleep_for(::seconds(sleep_t));
