@@ -113,7 +113,7 @@ void plot2_start(Role *player_addr, Role *boss_addr){   //Plot for set2 starting
 void plot2_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot for set2 ending
     if(player_loss){
         cout << boss_addr->name << " : I TOLD YOU!! MY ONLY DEMAND IS TO GO TO WORK!" << endl;    sleep_for(::seconds(sleep_t));
-        cout << boss_addr->name << " : I am the employee! I am the man who work for my employee!" << endl;  sleep_for(::seconds(sleep_t));
+        cout << boss_addr->name << " : I am the employee! I am the man who work for my employer!" << endl;  sleep_for(::seconds(sleep_t));
         cout << player_addr->name << " : That's not truth!! You work for yourself!!" << endl;   sleep_for(::seconds(sleep_t));
         cout << "[" << boss_addr->name << " just smile at " << player_addr->name << "]" << endl;    sleep_for(::seconds(sleep_t));
         cout << boss_addr->name << " : NOW! Say My Name!" << endl;  sleep_for(::seconds(sleep_t));
@@ -248,7 +248,7 @@ void plot4_start(Role *player_addr, Role *boss_addr){   //Plot for set4 starting
     boss_addr->name="KingPin";
     cout << boss_addr->name << " : I am the employer of the company! None can esacape from my control!!" << endl;   sleep_for(::seconds(sleep_t));
     cout << player_addr->name << " : Oh God! Here we go again..." << endl;  sleep_for(::seconds(sleep_t));
-    cout << "========================Battle 3========================" << endl;
+    cout << "========================Battle 4========================" << endl;
     cout << "Boss : " << boss_addr->name << " HP: " << boss_addr->HP << " Skill: " << boss_addr->skill << endl;     sleep_for(::seconds(sleep_t));
 }
 
