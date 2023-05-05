@@ -75,7 +75,7 @@ As a typical local student in Hong Kong, we were thinking of making a game that 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The story line 
+THE STORY LINE
 
 For Hongkongers who have been working unhappily and want to let off steam about their work or life, this is the perfect RPG game that is designed for you. 
 The story of this RPG game is basically talking about a random Hongkonger who wakes up late for his work and starts his day rushing to his company in a bad mood. 
@@ -87,8 +87,24 @@ Or it might be an arrogant and bossy boss who always complains about your work a
 You probably have met one of these things that make you unhappy, 
 and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
 Life still go one and we should not put our energy on something or someone who make us unhappy.
+If you are having a bad day or want to express your anger,
+we are always here to welcome you!
+We also hope that you can forgive you enermy after defeating them,
+to share the value of tolarence
 
 P.S. We do not promote using violence to solve any problems.
+
+GAME Rules
+This is a RPG game, player will first enter thier name which create a character
+then the player will be asked which command will he/she want to input
+1: start a new game, 2:load the game where you last stop, 3:credits, 4:exit
+after input a integer(1/2/3/4), the game will produce related function.
+There are in total 4 bosses, player has to beat them up so that we can move on to go back to the company.
+If the player loss in the battle, the game will ended.
+else, the player will be asked if he/she are willing to forgive the boss/enermy.
+If the player choose "forgive", it will be consider as getting 1 point on good ending, 
+and if the player gets 4 points on good ending, they can achieve "GOOD END" at the end.
+
 
 
 
