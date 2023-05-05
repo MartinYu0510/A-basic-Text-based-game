@@ -44,10 +44,10 @@ char menu(){  //it is used for the opening of the game, it will include 4 choice
             cout << "Please input a valid value!!" << endl;
         }
     }
-    return option;
+    return option;  //return the gamemode chosen by the player
 }
 
-void ending(bool result){   //True=good(real)/bad(fake) ending && False=lose ending
+void ending(bool result){   //inputing bool result for checking good/bad end, i.e. True=good(real)/bad(fake) ending && False=lose ending
     if(result){
         cout << "THE END"<< endl;
         cout << "THANK FOR PLAYING" << endl;
@@ -62,6 +62,6 @@ void ending(bool result){   //True=good(real)/bad(fake) ending && False=lose end
         lamo.push_back("Quite game is the only solution for you..");
         int index=random_event("ending_lose")-1;
         cout << lamo[index] << endl;
-        lamo.clear();
+        lamo.clear();   //clearing vector for dynamic programming
     }
 }
