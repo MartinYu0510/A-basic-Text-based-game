@@ -64,84 +64,72 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Game
 
+### In this game, we have
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/New_Facilities.gif"  width="300"  /></a>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
+(c) GOVHK
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-THE STORY LINE
+### THE STORY LINE
 
 For Hongkongers who have been working unhappily and want to let off steam about their work or life, this is the perfect RPG game that is designed for you. 
 The story of this RPG game is basically talking about a random Hongkonger who wakes up late for his work and starts his day rushing to his company in a bad mood. 
+
 He meets different things that most Hongkongers hate the most about their work, and he must beat them up to go back to his company. 
-It might be the morning alarm wakes you up every day.
-It might be a crazy passerby who keeps complaining you block their way to the company. 
-It might be an annoying colleague who always sarcasms you first and never keep their mouth shut. 
-Or it might be an arrogant and bossy boss who always complains about your work and performance but seldom or even never compliment others. 
-You probably have met one of these things that make you unhappy, 
-and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
+
+- It might be the morning alarm wakes you up every day.
+
+- It might be a crazy passerby who keeps complaining you block their way to the company. 
+
+- It might be an annoying colleague who always sarcasms you first and never keep their mouth shut. 
+
+- Or it might be an arrogant and bossy boss who always complains about your work and performance but seldom or even never compliment others. 
+
+- You probably have met one of these things that make you unhappy, 
+  and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
+
 Life still go one and we should not put our energy on something or someone who make us unhappy.
 If you are having a bad day or want to express your anger,
 we are always here to welcome you!
 We also hope that you can forgive you enermy after defeating them,
-to share the value of tolarence to society,
-because we believe that life will be better if tolarence is here.
-We hope that players can learn that when life gives you lemon,
-then just make yourself a lemonade.
-Laugh it off when Life is suck.
+to share the value of tolarence
 
-P.S. We do not promote using violence to solve any problems.
+<Strong><font face="Helvetica" size = "6" color = "RED"> P.S. We do NOT promote using violence to solve any problems.</font></Strong>
 
+### GAME Rules
 
+- This is a RPG game, player will first enter thier name which create a character.
+- Then the player will be asked which command will he/she want to input
 
-GAME OUTLINE
+<img src = "img/Main_menu.jpg"></img>
 
-This is a RPG game, player will first enter thier name which create a character
-then the player will be asked which command will he/she want to input
-1: start a new game, 2:load the game where you last stop, 3:credits, 4:exit
-after input a integer(1/2/3/4), the game will produce related function.
+After input a integer(1/2/3/4), the game will produce related function.
 There are in total 4 bosses, player has to beat them up so that we can move on to go back to the company.
+
 If the player loss in the battle, the game will ended.
 else, the player will be asked if he/she are willing to forgive the boss/enermy.
 If the player choose "forgive", it will be consider as getting 1 point on good ending, 
 and if the player gets 4 points on good ending, they can achieve "GOOD END" at the end.
 
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-GAME RULE
 
-Player has four different skills to choose,
-different skill requires different amount of SP to launch).
-The SP of player will be detucted relative ammount after using skills.
-If the player's SP is not enought to use the skill,
-player is not able to use it.
+As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
 
-Player will first attack the boss with the skill he chooses,
-and there is a random chance that player can hit "crtical damage",
-which can achieve more attack on the boss.
-And then it will be the attack round of the boss.
-As there are four different boss, 
-each boss has their different statistic (hp, attack) and different skills.
-The skill used by the boss is randomly decidedin each round.
-The boss also have to chance to hit a "critical damage" on the player.
-The battle will stop until one side's hp drop to 0.
-If the player win, 
-the player can keep moving forward to the next battle,
-and the player will be asked if the player are willing to forgive the enermy.
-A point of good ending will be recieved if the player say yes.
-If the player lose, the player will be consider losing the game and ended with "BAD END"
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 
 
 
 ### Built With
 
-- 100% C++ [![CPP][CPP.com]][cpp-url]
+- 100% [![CPP][CPP.com]][cpp-url]
 - 200% Love
 - 300% Stress
 
@@ -287,6 +275,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-url]: https://github.com/MartinYu0510/Engg1340_Project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/MartinYu0510/Engg1340_Project?style=for-the-badge
 [issues-url]: https://github.com/MartinYu0510/Engg1340_Project/issues
-[product-screenshot]: images/New_Facilities.gif
+[product-screenshot]: img/New_Facilities.gif
 [CPP.com]: https://img.shields.io/badge/-c++-black?logo=c%2B%2B&style=for-the-badge
 [cpp-url]: https://isocpp.org/
