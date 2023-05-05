@@ -303,7 +303,8 @@ void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot 
     cout << "But did not know where to express your feeling?" << endl; sleep_for(::seconds(sleep_t));
     cout << "COME HERE TO PLAY! COME HERE TO EXPRESS ALL YOUR FEELING!" << endl; sleep_for(::seconds(sleep_t));
     cout << "We are here for you to play as long as you want" << endl; sleep_for(::seconds(sleep_t));
-    cout << "Show us your anger, your upset, you desire!" cout << "\n\nWe must admit that there is always ups and downs in life." << endl; sleep_for(::seconds(sleep_t));
+    cout << "Show us your anger, your upset, you desire!";
+    cout << "\n\nWe must admit that there is always ups and downs in life." << endl; sleep_for(::seconds(sleep_t));
     cout << "Sometimes we might keeps running into some lucky things all day long," << endl; sleep_for(::seconds(sleep_t));
     cout << "feeling as happy as you can fly" << endl; sleep_for(::seconds(sleep_t));
     cout << "Sometimes we might keeps running into some unlucky things all day long," << endl; sleep_for(::seconds(sleep_t));
@@ -319,7 +320,8 @@ void plot4_ending(Role *player_addr, Role *boss_addr, int player_loss){  //Plot 
     cout << "But did not know where to express your feeling?" << endl; sleep_for(::seconds(sleep_t));
     cout << "COME HERE TO PLAY! COME HERE TO EXPRESS ALL YOUR FEELING!" << endl; sleep_for(::seconds(sleep_t));
     cout << "We are here for you to play as long as you want," << endl; sleep_for(::seconds(sleep_t));
-    cout << "and put up your smile next day, work into your company and continue you life" cout << "\n\nWe must admit that there is always ups and downs in life." << endl; sleep_for(::seconds(sleep_t));
+    cout << "and put up your smile next day, work into your company and continue you life";
+    cout << "\n\nWe must admit that there is always ups and downs in life." << endl; sleep_for(::seconds(sleep_t));
     cout << "Sometimes we might keeps running into some lucky things all day long," << endl; sleep_for(::seconds(sleep_t));
     cout << "feeling as happy as you can fly" << endl; sleep_for(::seconds(sleep_t));
     cout << "Sometimes we might keeps running into some unlucky things all day long," << endl; sleep_for(::seconds(sleep_t));
