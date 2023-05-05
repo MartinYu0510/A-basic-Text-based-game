@@ -90,11 +90,18 @@ Life still go one and we should not put our energy on something or someone who m
 If you are having a bad day or want to express your anger,
 we are always here to welcome you!
 We also hope that you can forgive you enermy after defeating them,
-to share the value of tolarence
+to share the value of tolarence to society,
+because we believe that life will be better if tolarence is here.
+We hope that players can learn that when life gives you lemon,
+then just make yourself a lemonade.
+Laugh it off when Life is suck.
 
 P.S. We do not promote using violence to solve any problems.
 
-GAME Rules
+
+
+GAME OUTLINE
+
 This is a RPG game, player will first enter thier name which create a character
 then the player will be asked which command will he/she want to input
 1: start a new game, 2:load the game where you last stop, 3:credits, 4:exit
@@ -106,6 +113,29 @@ If the player choose "forgive", it will be consider as getting 1 point on good e
 and if the player gets 4 points on good ending, they can achieve "GOOD END" at the end.
 
 
+
+GAME RULE
+
+Player has four different skills to choose,
+different skill requires different amount of SP to launch).
+The SP of player will be detucted relative ammount after using skills.
+If the player's SP is not enought to use the skill,
+player is not able to use it.
+
+Player will first attack the boss with the skill he chooses,
+and there is a random chance that player can hit "crtical damage",
+which can achieve more attack on the boss.
+And then it will be the attack round of the boss.
+As there are four different boss, 
+each boss has their different statistic (hp, attack) and different skills.
+The skill used by the boss is randomly decidedin each round.
+The boss also have to chance to hit a "critical damage" on the player.
+The battle will stop until one side's hp drop to 0.
+If the player win, 
+the player can keep moving forward to the next battle,
+and the player will be asked if the player are willing to forgive the enermy.
+A point of good ending will be recieved if the player say yes.
+If the player lose, the player will be consider losing the game and ended with "BAD END"
 
 
 
