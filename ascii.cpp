@@ -1,5 +1,3 @@
-//
-// Created by MartinYu on 18/4/2023.
 // This cpp is used for generate different graphics which will be used in set3 and all the skills
 // This is created for providing visual effect
 #include <string>
