@@ -22,7 +22,7 @@ bool maingame(char mode){ //for player to choose the option in the game's openin
             cout << "Hope to seee you again !";
             exit(0);
     }
-    return player_loss;
+    return player_loss; //return the bool variable for detecting loss or win
 }
 
 int main() {
