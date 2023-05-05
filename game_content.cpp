@@ -16,8 +16,8 @@ const int sleep_t=1;
 vector<string> trashword;
 
 void set1(Role *player_addr, int &set, bool &player_loss){ //for set1
-    if(player_loss){
-        return;
+    if(player_loss){        
+        return;         //end function calling if loss
     }
     Role boss;
     boss=boss_status_init(set);
@@ -138,7 +138,7 @@ void set1(Role *player_addr, int &set, bool &player_loss){ //for set1
     }
     plot1_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        return;
+        return;         //end function calling if loss
     }
     string option;
     set++;
@@ -228,7 +228,7 @@ void skill_choice(Role *player_addr, int &set, bool &player_loss){  //the part f
 }
 void set2(Role *player_addr, int &set, bool &player_loss){ //for set2
     if(player_loss){
-        return;
+        return;         //end function calling if loss
     }
     Role boss;
     boss=boss_status_init(set);
@@ -360,7 +360,7 @@ void set2(Role *player_addr, int &set, bool &player_loss){ //for set2
     }
     plot2_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        return;
+        return;     //end function calling if loss
     }
     string option;
     set++;
@@ -381,7 +381,7 @@ void set2(Role *player_addr, int &set, bool &player_loss){ //for set2
 
 void set3(Role *player_addr, int &set, bool &player_loss){ //for set3
     if(player_loss){
-        return;
+        return;     //end function calling if loss
     }
     Role boss;
     boss=boss_status_init(set);
@@ -515,7 +515,7 @@ void set3(Role *player_addr, int &set, bool &player_loss){ //for set3
     }
     plot3_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        return;
+        return;     //end function calling if loss
     }
     string option;
     set++;
@@ -669,7 +669,7 @@ void set4(Role *player_addr, int &set, bool &player_loss){ //for set4
     }
     plot4_ending(player_addr, boss_addr, player_loss);
     if(player_loss){
-        return;
+        return;     //end function calling if loss
     }
 }
 
@@ -678,17 +678,17 @@ bool new_game(){        //Starting a new game
     bool player_loss=false;
     Role player;
     Role *player_addr=&player;
-    player=player_status_main();
+    player=player_status_main();    //initializing struct player variable
     set1(player_addr, set, player_loss);
     skill_choice(player_addr, set, player_loss);
     set2(player_addr, set, player_loss);
     set3(player_addr, set, player_loss);
     set4(player_addr, set, player_loss);
     if(player_loss){
-        return true;
+        return true;    //return true for detecting loss
     }
     else{
-        return false;
+        return false;   //return false for detecting win
     }
 }
 
@@ -697,7 +697,7 @@ bool load_game(){       //Loading the original game
     bool player_loss=false;
     Role player;
     Role *player_addr=&player;
-    player=load(player_addr, set);
+    player=load(player_addr, set);      //receiving loading from saveloadcpp
     switch(set){
         case 2:
             skill_choice(player_addr, set, player_loss);
@@ -714,10 +714,10 @@ bool load_game(){       //Loading the original game
             break;
     }
     if(player_loss){
-        return true;
+        return true;    //return true for detecting loss
     }
     else{
-        return false;
+        return false;   //return false for detecting win
     }
 }
 
