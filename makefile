@@ -25,4 +25,4 @@ main.o: main.cpp game_content.h game_plot.h saveload.h start_menu.h game_status.
 clean: 
 	rm -f *.o main
 
-.PHONY:	clear
+.PHONY:	clean
