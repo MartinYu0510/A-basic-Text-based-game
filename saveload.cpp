@@ -1,6 +1,4 @@
-//
-// Created by MartinYu on 6/4/2023.
-//
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -12,7 +10,7 @@ using namespace std;
 
 void save(Role *player_addr, int set) { //it is used to save the player's data, and it will produce "Progress is successfully saved !" if it's successful, else produce "File cannot open"
     Role *player;
-    player = new Role;
+    player = new Role;  
     *player = *player_addr;
     ofstream savegame;
     savegame.open("saveload.txt");
@@ -26,9 +24,9 @@ void save(Role *player_addr, int set) { //it is used to save the player's data, 
     delete player;
 }
 
-Role load(Role *player_addr, int &set){ //upload the player's data where the player stopped before
+Role load(Role *player_addr, int &set){ //upload the player's data where the player stopped before by passing value of pointer variable and by reference of set for changing the value of set
     Role temp;
-    Role *player=new Role;
+    Role *player=new Role;  //Assigning Free memory for storing the temporary data
     *player=*player_addr;
     cout << "Start loading save..." << endl;
     ifstream loadgame;
@@ -61,6 +59,6 @@ Role load(Role *player_addr, int &set){ //upload the player's data where the pla
     loadgame.close();
     temp=(*player);
     delete player;
-    return temp;
+    return temp;    //return the loading data 
 }
 
