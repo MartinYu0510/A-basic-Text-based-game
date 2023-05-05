@@ -1,6 +1,4 @@
 //
-// Created by MartinYu on 9/4/2023.
-//
 
 #ifndef COURSE_PROJECT_GAME_PLOT_H
 #define COURSE_PROJECT_GAME_PLOT_H
