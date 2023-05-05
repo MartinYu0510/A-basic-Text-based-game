@@ -68,7 +68,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![](https://github.com/MartinYu0510/Engg1340_Project/img/New_Facilities.gif))
 
 As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
 
