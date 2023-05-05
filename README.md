@@ -68,12 +68,28 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![](https://github.com/MartinYu0510/Engg1340_Project/img/New_Facilities.gif))
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+The story line 
+
+For Hongkongers who have been working unhappily and want to let off steam about their work or life, this is the perfect RPG game that is designed for you. 
+The story of this RPG game is basically talking about a random Hongkonger who wakes up late for his work and starts his day rushing to his company in a bad mood. 
+He meets different things that most Hongkongers hate the most about their work, and he must beat them up to go back to his company. 
+It might be the morning alarm wakes you up every day.
+It might be a crazy passerby who keeps complaining you block their way to the company. 
+It might be an annoying colleague who always sarcasms you first and never keep their mouth shut. 
+Or it might be an arrogant and bossy boss who always complains about your work and performance but seldom or even never compliment others. 
+You probably have met one of these things that make you unhappy, 
+and we hope to provide you with a platform or a satisfying game for you to let off steam about your work.
+Life still go one and we should not put our energy on something or someone who make us unhappy.
+
+P.S. We do not promote using violence to solve any problems.
+
 
 
 
