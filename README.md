@@ -225,6 +225,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-url]: https://github.com/MartinYu0510/Engg1340_Project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/MartinYu0510/Engg1340_Project?style=for-the-badge
 [issues-url]: https://github.com/MartinYu0510/Engg1340_Project/issues
-[product-screenshot]: images/New Facilities.gif
+[product-screenshot]: images/New_Facilities.gif
 [CPP.com]: https://img.shields.io/badge/-c++-black?logo=c%2B%2B&style=for-the-badge
 [cpp-url]: https://isocpp.org/
