@@ -33,11 +33,11 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary><font size = 5>Table of Contents</font></summary>
   <ol>
   <li><a href="#about-the-game">About The Game</a></li>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About The Code</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -57,7 +57,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><font size = 5 face = "Helvetica"><strong><a href="#members">Our Team Members</a></font></strong></li>
   </ol>
 </details>
 
@@ -71,6 +71,8 @@
 (c) GOVHK
 
 
+<<<<<<< HEAD
+=======
 ### OUR TEAM
 
 [Full name][UID][GIT name]
@@ -79,6 +81,7 @@
 - WONG KWUN YAT 3036065915 BORISWKT
 
 - CHIK WAI CHING 3036068436 KC0072015
+>>>>>>> 145463ad86467c041c105998699bd67a718efcac
 
 ### THE STORY LINE
 
@@ -107,10 +110,11 @@ to share the value of tolarence
 
 <Strong><font face="Helvetica" size = "6" color = "RED"> P.S. We do NOT promote using violence to solve any problems.</font></Strong>
 
-### GAME Rules
+### Game Rules
 
 - This is a RPG game, player will first enter thier name which create a character.
 - Then the player will be asked which command will he/she want to input
+- <strong>This is a singleplayer PVE game, for those who have friends, go make the multiplayer feature (or PVP)!</strong>
 
 <img src = "img/Main_menu.png"></img>
 
@@ -121,20 +125,62 @@ If the player loss in the battle, the game will ended.
 else, the player will be asked if he/she are willing to forgive the boss/enermy.
 If the player choose "forgive", it will be consider as getting 1 point on good ending, 
 and if the player gets 4 points on good ending, they can achieve "GOOD END" at the end.
+<br>
+<br>
+<br>
+
+<!-- ABOUT THE CODE -->
+## About The Code
+
+Our code meets all the requirements stated in the Project Requirements pdf. Here are the explainations.
+
+### Generation of random game sets or events
+
+- Under function `random_event` in `game_status.cpp`, we used `rand()` function to generate random events, such as critical hit and boss's moves.
+
+### Data structures for storing status
+- In `game_status.h`, we use a data structure called `Role` to store entities' dynamic informations:
+  - Name
+  - Skill
+  - HP
+  - Attack
+  - SP
+  - etc.
+- Using unified data structures, we can reuse every functions to read / edit entities' dynamic informations.
+
+### Dynamic memory management
+
+- Under `save` function in `saveload.cpp`, we used pointers to temporarily store a structure Role of the player. After the data is saved into `saveload.txt`, the pointer is deleted, thus saving memory
+
+### File IO
+- In `saveload.cpp`, both functions uses the library `fstream`, which is used to
+  - Save game into `saveload.txt` in `save()` function
+  - Load game from `saveload.txt` in `load()` function
+
+### Program codes in multiple files
+- The whole game is separated into
+  - `ascii.cpp` to store ASCII arts
+  - `game_content.cpp` to store battle system
+  - `game_plot.cpp` to store the plot of the story
+  - `game_status.cpp` to store the battle system ui and plot
+  - `saveload.cpp` to store fileIO functions
+  - `start_menu.cpp` to store the start menu and ending
+  - `main.cpp` to organise all the cpp
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-
-As a typical local student in Hong Kong, we were thinking of making a game that can catch current's trend. To highlight the 
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
+### Proper indentation and naming styles
+- We used K&R style indentation:
+  - ```
+    function(){
+      Expression
+    }
+    ```
+- We used Snakecase naming styles:
+  - ```
+    player_loss
+    ```
+### In-code documentation
+- We added comentries on functions for users understand the use of them.
 
 
 ### Built With
@@ -144,7 +190,6 @@ As a typical local student in Hong Kong, we were thinking of making a game that 
 - 300% Stress
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -194,14 +239,18 @@ Linux systems are easier to setup the g++ environment.
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo, by downloading the zip file of repository. For users using command prompt / terminal:
    ```sh
    git clone https://github.com/MartinYu0510/Engg1340_Project.git
    ```
 2. In the destination file, compile the code using makefile
-	   ```sh
-	   make
-	   ```
+    ```sh
+    make main
+    ```
+    Or
+    ```sh
+    make
+    ```
 3. run the game `main`
    ```sh
    ./main
@@ -250,11 +299,23 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - kc072015@connect.hku.hk
+Mail:[kc0072015@connect.hku.hk](mailto://kc072015@connect.hku.hk)
 
 Project Link: [https://github.com/MartinYu0510/Engg1340_Project](https://github.com/MartinYu0510/Engg1340_Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MEMBERS -->
+## Members
+
+|<h2>Username</h2>|<center><h2>MartinYu0510</h2></center>  | <h2><center>KC0072015</center></h2>     | <h2><center>BORISWKT</center></h2>      |
+| ------------- | ------------- | ------------- | ------------- |
+|<H2>Handsome Image</h2>|<center><img src = "https://avatars.githubusercontent.com/u/124866191?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/73422749?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/125748731?v=4" width = "50%"></center>|
+|<h2>UID</h2>| <center>3036064416</center>    | <center>3036068436</center>    | <center> 3036065915</center>   |
+|<h2>Name</h2>|<center> Ma Tin Yu</center>     | <center>Chik Wai Ching</center>|<center> Wong Kwun Yat</center> |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
