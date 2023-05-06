@@ -136,7 +136,7 @@ Our code meets all the requirements stated in the Project Requirements pdf. Here
 
 ### Generation of random game sets or events
 
-- Under function `random_event` in `game_status.cpp`, we used `rand()` function to generate random events, such as critical hit and boss's moves.
+- Under function `random_event()` in `game_status.cpp`, we used `rand()` function to generate random events, such as critical hit and boss's moves.
 
 ### Data structures for storing status
 - In `game_status.h`, we use a data structure called `Role` to store entities' dynamic informations:
@@ -150,7 +150,9 @@ Our code meets all the requirements stated in the Project Requirements pdf. Here
 
 ### Dynamic memory management
 
-- Under `save` function in `saveload.cpp`, we used pointers to temporarily store a structure Role of the player. After the data is saved into `saveload.txt`, the pointer is deleted, thus saving memory
+- Under `save` function in `saveload.cpp`, we used pointers to temporarily store a structure `Role` of the player. After the data is saved into `saveload.txt`, the pointer is deleted, thus saving memory
+- Under `boss_status_init()` as long as the `player_status_main()` functions in `game_status.cpp`, we used pointers to store the boss's `Role`. Once after battle, the pointer is deleted.
+- We uses vector to store the random lines, then by `random_event()` function, the program prints a random line. After a line is printed. the vector is cleared.
 
 ### File IO
 - In `saveload.cpp`, both functions uses the library `fstream`, which is used to
