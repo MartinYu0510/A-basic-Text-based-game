@@ -36,6 +36,7 @@
   <summary><font size = 5>Table of Contents</font></summary>
   <ol>
   <li><a href="#about-the-game">About The Game</a></li>
+  <li><font size = 5 face = "Helvetica"><strong><a href="#members">Our Team Members</a></font></strong></li>
     <li>
       <a href="#about-the-project">About The Code</a>
       <ul>
@@ -57,7 +58,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><font size = 5 face = "Helvetica"><strong><a href="#members">Our Team Members</a></font></strong></li>
   </ol>
 </details>
 
@@ -70,18 +70,16 @@
 
 (c) GOVHK
 
+<!-- MEMBERS -->
+## Members
 
-<<<<<<< HEAD
-=======
-### OUR TEAM
+|<h2>Username</h2>|<center><h2>MartinYu0510</h2></center>  | <h2><center>KC0072015</center></h2>     | <h2><center>BORISWKT</center></h2>      |
+| ------------- | ------------- | ------------- | ------------- |
+|<H2>Handsome Image</h2>|<center><img src = "https://avatars.githubusercontent.com/u/124866191?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/73422749?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/125748731?v=4" width = "50%"></center>|
+|<h2>UID</h2>| <center>3036064416</center>    | <center>3036068436</center>    | <center> 3036065915</center>   |
+|<h2>Name</h2>|<center> Ma Tin Yu</center>     | <center>Chik Wai Ching</center>|<center> Wong Kwun Yat</center> |
 
-[Full name][UID][GIT name]
-- MA TIN YU 3036064416 MartinYu0510
-
-- WONG KWUN YAT 3036065915 BORISWKT
-
-- CHIK WAI CHING 3036068436 KC0072015
->>>>>>> 145463ad86467c041c105998699bd67a718efcac
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### THE STORY LINE
 
@@ -307,16 +305,7 @@ Project Link: [https://github.com/MartinYu0510/Engg1340_Project](https://github.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- MEMBERS -->
-## Members
 
-|<h2>Username</h2>|<center><h2>MartinYu0510</h2></center>  | <h2><center>KC0072015</center></h2>     | <h2><center>BORISWKT</center></h2>      |
-| ------------- | ------------- | ------------- | ------------- |
-|<H2>Handsome Image</h2>|<center><img src = "https://avatars.githubusercontent.com/u/124866191?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/73422749?v=4" width = "50%"></center>|<center><img src = "https://avatars.githubusercontent.com/u/125748731?v=4" width = "50%"></center>|
-|<h2>UID</h2>| <center>3036064416</center>    | <center>3036068436</center>    | <center> 3036065915</center>   |
-|<h2>Name</h2>|<center> Ma Tin Yu</center>     | <center>Chik Wai Ching</center>|<center> Wong Kwun Yat</center> |
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
